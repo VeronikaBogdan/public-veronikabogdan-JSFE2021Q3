@@ -280,3 +280,32 @@ p span {
 .contacts-info a:hover {
 	color: var(--font-gold);
 }
+
+.footer-navbar {
+	display: flex;
+}
+.footer-links {
+	display: flex;
+	padding-top: 55px;
+}
+.footer-nav ul{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 150px;
+	padding-left: 145px;
+	/* padding-top: 30px; */
+}
+
+.line {
+	border-bottom: 3px solid #666;
+}
+.footer-flex {
+	display: flex;
+	justify-content: space-between;
+	font-family: Roboto-Thin;
+	font-weight: 200;
+	font-size: var(--font3);
+	line-height: 22px;
+	letter-spacing: 2px;
+	padding: 50px 0 52px 0;
+}
