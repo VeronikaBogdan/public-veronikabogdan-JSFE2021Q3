@@ -1,150 +1,146 @@
 @font-face {
-	font-family: Roboto-Bold; 
-	src: url('./assets/fonts/Roboto-Bold.ttf');
+  font-family: Roboto-Bold;
+  src: url("./assets/fonts/Roboto-Bold.ttf");
 }
 @font-face {
-	font-family: Roboto-Light;
-	src: url('./assets/fonts/Roboto-Light.ttf');
+  font-family: Roboto-Light;
+  src: url("./assets/fonts/Roboto-Light.ttf");
 }
 @font-face {
-	font-family: Roboto-Thin;
-	src: url('./assets/fonts/Roboto-Thin.ttf');
+  font-family: Roboto-Thin;
+  src: url("./assets/fonts/Roboto-Thin.ttf");
 }
 @font-face {
-	font-family: Roboto-Regular;
-	src: url('./assets/fonts/Roboto-Regular.ttf');
+  font-family: Roboto-Regular;
+  src: url("./assets/fonts/Roboto-Regular.ttf");
 }
 @font-face {
-	font-family: Roboto-Medium;
-	src: url('./assets/fonts/Roboto-Medium.ttf');
+  font-family: Roboto-Medium;
+  src: url("./assets/fonts/Roboto-Medium.ttf");
 }
 @font-face {
-	font-family: Forum;
-	src: url('./assets/fonts/Forum-Regular.ttf');
+  font-family: Forum;
+  src: url("./assets/fonts/Forum-Regular.ttf");
 }
 
-:root{
-	--size-text: 22px;
-	--font-black: #000;
-	--font-light: #fff;
-	--bg-dark: #030303;
-	--dark-red: #710707;
-	--font-gold: #9d8665;
-	--link-active: #7E6C51;
-	--font1: 80px;
-	--font2: 28px;
-	--font3: 22px;
+:root {
+  --font-black: #000;
+  --font-light: #fff;
+  --bg-dark: #030303;
+  --dark-red: #710707;
+  --font-gold: #9d8665;
+  --link-active: #7e6c51;
+  --font1: 80px;
+  --font2: 28px;
+  --font3: 22px;
+  --font4: 18px;
+  --f-card: 32px;
 }
-*{
-	margin: 0;
-	padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
-html{
-	font-family: Roboto-Regular;
-	scroll-behavior: smooth;
+html {
+  font-family: Roboto-Regular;
+  scroll-behavior: smooth;
 }
-a{
-	text-decoration: none;
+a {
+  text-decoration: none;
 }
-li{
-	list-style: none;
+li {
+  list-style: none;
 }
-p{
-	font-family: Roboto-Light;
-	font-size: var(--font3);
+p {
+  font-family: Roboto-Light;
+  font-size: var(--font3);
 }
 .container {
-	margin: 0 auto;
-	width: 1440px;
+  margin: 0 auto;
+  width: 1440px;
 }
-/* .flexbox{
-	display: flex;
-} */
-.slider-img{
-	/* position: absolute;
+.slider-img {
+  /* position: absolute;
 	right: 0; */
-	background-position: calc(100% - 20px) calc(100% - 10px);
+  background-position: calc(100% - 20px) calc(100% - 10px);
 }
-.header{
-	background-color: var(--bg-dark);
-	padding: 62px 0;
-	/* max-height: 150px; */
+.header {
+  background-color: var(--bg-dark);
+  padding: 62px 0;
+  /* max-height: 150px; */
 }
 .header-container .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-	background-color: var(--bg-dark);
-	max-height: 150px;
-}
-.header img {
-	/* padding-top: 59px; */
+  background-color: var(--bg-dark);
+  max-height: 150px;
 }
 .navbar ul {
-	display: flex;
+  display: flex;
 }
 .navbar ul li:not(:first-child) {
-	padding-left: 55px;
+  padding-left: 55px;
 }
 .dark-link {
-	font-family: Roboto-Thin;
-	color: var(--font-light);
-	font-size: var(--size-text);
-	line-height: 26px;
-	letter-spacing: 2px;
+  font-family: Roboto-Thin;
+  color: var(--font-light);
+  font-size: var(--size-text);
+  line-height: 26px;
+  letter-spacing: 2px;
 }
-a.dark-link:hover{
-	color: var(--font-gold);	
+a.dark-link:hover {
+  color: var(--font-gold);
 }
-
-
-
 
 .section {
-	padding: 75px 0;
+  padding: 75px 0;
 }
 
 .dark-section {
-	background-color: var(--bg-dark); 
+  background-color: var(--bg-dark);
+  color: var(--font-light);
 }
-.title{
-	width: 598px;
-	padding: 75px 0 197px 0;
+.title {
+  width: 598px;
+  padding: 75px 0 197px 0;
 }
-.title p{
-	font-size: var(--font2);
-	letter-spacing: 2px;
-	line-height: 33px;
-	padding: 25px 0 75px 0;
+.title p {
+  font-size: var(--font2);
+  letter-spacing: 2px;
+  line-height: 33px;
+  padding: 25px 0 75px 0;
 }
-.red-button-louvre{
-	width: 360px;
-	height: 75px;
-	font-family: Roboto-Light;
-	font-size: 22px;
-	line-height: 25.78px;
-	letter-spacing: 2px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: var(--font-light);
-	background: var(--dark-red);
-	border-radius: 10px;
+.red-button-louvre {
+  width: 360px;
+  height: 75px;
+  font-family: Roboto-Light;
+  font-size: 22px;
+  line-height: 25.78px;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--font-light);
+  background: var(--dark-red);
+  border-radius: 10px;
 }
-.section-title{
-	font-family: Forum;
-	font-size: var(--font1);
-	font-weight: normal;
-	/* color: var(--font-black); */
-	line-height: 90px;
-	letter-spacing: 5px;
-	text-transform: uppercase;
+.section-title {
+  font-family: Forum;
+  font-size: var(--font1);
+  font-weight: normal;
+  /* color: var(--font-black); */
+  line-height: 90px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
 }
-.section-title-dark{
-	color: var(--font-light);
+.section-title-dark {
+  color: var(--font-light);
+}
+.section-title-light {
+  color: var(--font-gold);
 }
 .title-underline {
-	position: relative;
+  position: relative;
 }
 .title-underline::after {
   content: "";
@@ -155,7 +151,71 @@ a.dark-link:hover{
   height: 3px;
   background-color: var(--dark-red);
 }
+.section-inner {
+  padding-top: 103px;
+}
+
+.visiting-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 75px 60px;
+}
+.card {
+  display: block;
+}
+.card img {
+  width: 440px;
+  height: 285px;
+}
+.card-title {
+  color: var(--font-black);
+  font-size: var(--f-card);
+  line-height: 35px;
+  padding-top: 25px;
+}
+.card-title-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  width: 300px;
+  /* height: 2px; 
+   left: 0;
+  right: 0; */
+}
+.card-tour,
+.card-google {
+  font-family: Roboto-Thin;
+  font-size: var(--font3);
+  line-height: 26px;
+  color: var(--font-black);
+  padding-top: 22px;
+}
+.card-google {
+  font-size: var(--font4);
+  padding-top: 10px;
+}
+
+.section-explore {
+	display: flex;
+	justify-content: space-between;
+}
+.section-explore-text {
+	max-width: 660px;
+}
+.section-explore-text p {
+	padding-bottom: 25px;
+	line-height: 38px;
+	/* font-style: normal; */
+	/* font-weight: 300; */
+}
+p span {
+	color: #CAAA7D;
+}
+.section-explore-img {
+	width: 720px;
+	height: 700px;
+}
 
 .video-section {
-	padding: 90px 0;
+  padding: 90px 0;
 }
