@@ -8,6 +8,9 @@
 
 	<link rel="stylesheet" href="style.css" />
 	<link rel="icon" href="assets/favicon.ico">
+
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.js'></script>
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
 	<header class="header header-container">
@@ -142,7 +145,21 @@
 		<section class="section" id="contacts">
 			<div class="container">
 				<h2 class="section-title section-title-light title-underline">Contacts</h2>
-				
+				<div class="contacts section-inner">
+					<div class="contacts-info">
+						<h4>Palais Royal <br> Musee du Louvre</h4>
+						<p>address: 75001 Paris, France</p>
+						<p>
+							phone: 
+							<a href="tel:+33(0) 1 40 20 50 50">+33(0) 1 40 20 50 50</a>
+						</p>
+						<p>
+							mail: 
+							<a href="mailto:info@louvre.fr">info@louvre.fr</a>
+						</p>
+					</div>
+					<img src="assets/img/Map.jpg" alt="map">
+				</div>
 			</div>
 		</section>
 	</main>
@@ -152,5 +169,9 @@
 		</div>
 	</footer>
 	
+	<script src="js/gallery.js"></script>
+	<script src="js/map.js"></script>
+	<script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+
 </body>
 </html>

@@ -54,6 +54,15 @@ p {
   font-family: Roboto-Light;
   font-size: var(--font3);
 }
+h4 {
+	font-family: Roboto-Medium;
+	font-style: normal;
+	font-weight: 500;
+	font-size: var(--font2);
+	line-height: 33px;
+	color: var(--font-black);
+	padding-bottom: 50px;
+}
 .container {
   margin: 0 auto;
   width: 1440px;
@@ -255,4 +264,19 @@ p span {
 	background: url(assets/img/parallax.jpg);
 	background-size: cover;
 	background-attachment: fixed;
+}
+
+.contacts {
+	display: flex;
+	justify-content: space-between;
+}
+.contacts-info p {
+	padding-bottom: 25px;
+}
+.contacts-info a {
+	color: var(--font-black);
+	transition: all 0.3s ease-in-out;
+}
+.contacts-info a:hover {
+	color: var(--font-gold);
 }
