@@ -238,24 +238,25 @@ p span {
 }
 
 .picture-container {
-	overflow-y: hidden;
+  position: relative;
+  height: 1885px;
+  overflow-y: hidden;
+  padding-top: 75px;
 }
 .picture-inner-container {
-	height: 2000px;
-	padding-top: 75px;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	/* display: grid; */
-	/* grid-template-columns: 1fr 1fr 1fr; */
-	gap: 24px 36px;
+  height: 3020px;
+  column-count: 3;
+  column-gap: 36px;
+  width: 100%;
 }
 .picture-inner-container img {
-	/* width: 456px; */
-	width:calc( ( 100% - 40px ) / 3 );
-	height: 100%;
-	height:auto;
-	/* width: 33%; */
+  width: 456px;
+  break-inside: avoid;
+  margin-bottom: 20px;
+}
+.picture-inner-container img:nth-child(1),
+.picture-inner-container img:nth-child(11) {
+  margin-top: 50px;
 }
 
 .parallax {

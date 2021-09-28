@@ -1,221 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>museum</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>museum</title>
 
-	<link rel="stylesheet" href="style.css" />
-	<link rel="icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.ico">
 
-	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.js'></script>
-	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.css' rel='stylesheet' />
 </head>
+
 <body>
-	<header class="header header-container">
-		<div class="container">
-			<img src="./assets/svg/logo.svg" alt="logo">
-			<nav class="navbar">
-				<ul>
-					<li>
-						<a href="#visiting" class="dark-link">Visiting</a>
-					</li>
-					<li>
-						<a href="#explore" class="dark-link">Explore</a>
-					</li>
-					<li>
-						<a href="#video" class="dark-link">Video</a>
-					</li>
-					<li>
-						<a href="#gallery" class="dark-link">Gallery</a>
-					</li>
-					<li>
-						<a href="#tickets" class="dark-link">Tickets</a>
-					</li>
-					<li>
-						<a href="#contacts" class="dark-link">Contacts</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</header>
-	<main class="main">
-		<section class="section dark-section">
-			<div class="container">
-				<div class="title section-title-dark">
-					<h1 class="section-title">Welcome <br> to the Louvre</h1>
-					<p>From the castle to the museum</p>
-					<a href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736" class="red-button-louvre" target="_blank">Discover the Louvre</a>
-				</div>
-				<!-- <img class="slider-img" src="assets/img/welcome-slider/1.jpg" width="1000" height="750" alt="slider-img"> -->
-			</div>
-		</section>
-		<section class="section visiting-section" id="visiting">
-			<div class="container">
-				<h2 class="section-title section-title-light title-underline">Virtual tour</h2>
-				<div class="visiting-cards section-inner">
-					<a href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736" class="card">
-						<img src="./assets/img/galery/RoyalPalace.jpg" alt="photo: Royal Palace">
-						<h3 class="section-title card-title title-underline card-title-underline">Royal Palace</h3>
-						<p class="card-tour">360° Virtual Tour</p>
-						<p class="card-google">Google Street Panorama View</p>
-					</a>
-					<a href="https://www.google.com/maps/@48.8563254,2.3352706,3a,75y,90t/data=!3m7!1e1!3m5!1sAF1QipNRj_CwP4coDMYdCHj6qHeBeJpI2VxU5BUsOX4F!2e10!3e12!7i11000!8i5500" class="card">
-						<img src="./assets/img/galery/DenonWing.jpg" alt="photo: Denon Wing">
-						<h3 class="section-title card-title title-underline card-title-underline">Denon Wing</h3>
-						<p class="card-tour">360° Virtual Tour</p>
-						<p class="card-google">Google Street Panorama View</p>
-					</a>
-					<a href="https://www.google.com/maps/@48.8601723,2.3395439,3a,88.4y,322.04h,84.25t/data=!3m7!1e1!3m5!1sAF1QipNMZGQuEA-pAUvIG_eP_2f3gWTKZEJ6XLVJ-Pgb!2e10!3e12!7i10240!8i5120" class="card">
-						<img src="./assets/img/galery/ColonnadePerrault.jpg" alt="photo: Colonnade Perrault">
-						<h3 class="section-title card-title title-underline card-title-underline">Colonnade Perrault</h3>
-						<p class="card-tour">360° Virtual Tour</p>
-						<p class="card-google">Google Street Panorama View</p>
-					</a>
-					<a href="https://www.google.com/maps/@48.860183,2.3356156,3a,90y,177.69h,95.61t/data=!3m7!1e1!3m5!1sAF1QipP7uFZnTITRe-7AEVAgHAfqiCL-03gvBHcYWgF3!2e10!3e12!7i5472!8i2736" class="card">
-						<img src="./assets/img/galery/GreekHall.jpg" alt="photo: Greek hall">
-						<h3 class="section-title card-title title-underline card-title-underline">Greek hall</h3>
-						<p class="card-tour">360° Virtual Tour</p>
-						<p class="card-google">Google Street Panorama View</p>
-					</a>
-					<a href="https://www.google.com/maps/@48.8598788,2.3355157,3a,82.2y,7.53h,94t/data=!3m7!1e1!3m5!1sAF1QipO1wkUUbyzpPjj-OR0mR5etZJT-xl-40XK8rDQ3!2e10!3e12!7i10240!8i5120" class="card">
-						<img src="./assets/img/galery/MonaLisa.jpg" alt="photo: Mona Lisa">
-						<h3 class="section-title card-title title-underline card-title-underline">Mona Lisa</h3>
-						<p class="card-tour">360° Virtual Tour</p>
-						<p class="card-google">Google Street Panorama View</p>
-					</a>
-					<a href="https://www.google.com/maps/@48.8563254,2.3352706,3a,90y,21.26h,79.91t/data=!3m7!1e1!3m5!1sAF1QipPpGAowYatVyk3MMGnZAaQkYm2EUk-Dlca06SS5!2e10!3e12!7i11304!8i5652" class="card">
-						<img src="./assets/img/galery/NightPalace.jpg" alt="photo: Night Palace">
-						<h3 class="section-title card-title title-underline card-title-underline">Night Palace</h3>
-						<p class="card-tour">360° Virtual Tour</p>
-						<p class="card-google">Google Street Panorama View</p>
-					</a>
-				</div>
-			</div>
-		</section>
-		<section class="section dark-section" id="explore">
-			<div class="container section-explore">
-				<div class="section-explore-text">
-					<h2 class="section-title section-title-dark title-underline">Picture explore</h2>
-					<p class="section-inner">Las Meninas is a 1656 painting by Diego Velázquez, the leading <br> artist of the Spanish Golden Age.</p>
-					<p>It was cleaned in 1984 to remove a <span>"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.</p>
-					<p>The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>
-				</div>
-				<img src="assets/img/explore-slider/before.jpg" class="section-explore-img" alt="slider">
-			</div>
-		</section>
-		<section class="section" id="video">
-			<div class="container">
-				<h2 class="section-title section-title-light">Video journey</h2>
-			
-			</div>
-		</section>
-		<section class="section dark-section" id="gallery">
-			<div class="container">
-				<h2 class="section-title section-title-dark">Art gallery</h2>
-				<div class="picture-container">
-					<div class="picture-inner-container">
-						<img src="assets/img/galery/galery1.jpg" alt="photo: pictures and sculptures">
-						<img src="assets/img/galery/galery2.jpg" alt="photo: pictures and sculptures">
-						<img src="assets/img/galery/galery3.jpg" alt="photo: pictures and sculptures">
-						<img src="assets/img/galery/galery4.jpg" alt="photo: pictures and sculptures">
-						<img src="assets/img/galery/galery5.jpg" alt="photo: pictures and sculptures">
-						<img src="assets/img/galery/galery6.jpg" alt="photo: pictures and sculptures">
-						<img src="assets/img/galery/galery7.jpg" alt="photo: pictures and sculptures">
-						<img src="assets/img/galery/galery8.jpg" alt="photo: pictures and sculptures">
-						<img src="assets/img/galery/galery9.jpg" alt="photo: pictures and sculptures">
-						<img src="assets/img/galery/galery10.jpg" alt="photo: pictures and sculptures">
-						<img src="assets/img/galery/galery11.jpg" alt="photo: pictures and sculptures">
-						<img src="assets/img/galery/galery12.jpg" alt="photo: pictures and sculptures">
-						<img src="assets/img/galery/galery13.jpg" alt="photo: pictures and sculptures">
-						<img src="assets/img/galery/galery14.jpg" alt="photo: pictures and sculptures">
-						<img src="assets/img/galery/galery15.jpg" alt="photo: pictures and sculptures">
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="section" id="tickets">
-			<div class="container">
-				<h2 class="section-title section-title-light title-underline">Buy tickets</h2>
-				
-			</div>
-		</section>
-		<div class="parallax"></div>
-		<section class="section" id="contacts">
-			<div class="container">
-				<h2 class="section-title section-title-light title-underline">Contacts</h2>
-				<div class="contacts section-inner">
-					<div class="contacts-info">
-						<h4>Palais Royal <br> Musee du Louvre</h4>
-						<p>address: 75001 Paris, France</p>
-						<p>
-							phone: 
-							<a href="tel:+33(0)140205050">+33(0) 1 40 20 50 50</a>
-						</p>
-						<p>
-							mail: 
-							<a href="mailto:info@louvre.fr">info@louvre.fr</a>
-						</p>
-					</div>
-					<img src="assets/img/Map.jpg" alt="map">
-				</div>
-			</div>
-		</section>
-	</main>
-	<footer class="footer dark-section">
-		<div class="line">
-			<div class="container container-flex">
-				<div class="footer-navbar">
-					<div class="footer-links">
-						<img src="assets/svg/footer-logo.svg" alt="logo">
-						<nav class="footer-nav">
-							<ul>
-								<li>
-									<a href="#visiting" class="dark-link">Visiting</a>
-								</li>
-								<li>
-									<a href="#explore" class="dark-link">Explore</a>
-								</li>
-								<li>
-									<a href="#video" class="dark-link">Video</a>
-								</li>
-								<li>
-									<a href="#gallery" class="dark-link">Gallery</a>
-								</li>
-								<li>
-									<a href="#tickets" class="dark-link">Tickets</a>
-								</li>
-								<li>
-									<a href="#contacts" class="dark-link">Contacts</a>
-								</li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-				<div class="footer-icons">
-					<a class="dark-link icon" href="">
-						<img src="assets/svg/YouTube.svg" alt="icon: you-tube">
-					</a>
-					<img src="assets/svg/YouTube.svg" alt="icon: you-tube">
-				</div>
-			</div>
-		</div>
-		<div class="container footer-flex">
-			<p>© 2021</p>
-			<p>
-				<a class="dark-link" href="https://rs.school/js/">
-					The Rolling Scopes School
-				</a>
-			</p>
-			<p>
-				<a class="dark-link" href="#">VeronikaBogdan</a>
-			</p>
-		</div>
-	</footer>
-	
-	<script src="js/script.js"></script>
-	<script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+  <header class="header header-container">
+    <div class="container">
+      <a href="">
+        <img src="./assets/svg/logo.svg" alt="logo">
+      </a>
+      <nav class="navbar">
+        <ul>
+          <li>
+            <a href="#visiting" class="dark-link">Visiting</a>
+          </li>
+          <li>
+            <a href="#explore" class="dark-link">Explore</a>
+          </li>
+          <li>
+            <a href="#video" class="dark-link">Video</a>
+          </li>
+          <li>
+            <a href="#gallery" class="dark-link">Gallery</a>
+          </li>
+          <li>
+            <a href="#tickets" class="dark-link">Tickets</a>
+          </li>
+          <li>
+            <a href="#contacts" class="dark-link">Contacts</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="main">
+    <section class="section dark-section">
+      <div class="container">
+        <div class="title section-title-dark">
+          <h1 class="section-title">Welcome <br> to the Louvre</h1>
+          <p>From the castle to the museum</p>
+          <a href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736"
+            class="red-button-louvre" target="_blank">Discover the Louvre</a>
+        </div>
+        <!-- <img class="slider-img" src="assets/img/welcome-slider/1.jpg" width="1000" height="750" alt="slider-img"> -->
+      </div>
+    </section>
+    <section class="section visiting-section" id="visiting">
+      <div class="container">
+        <h2 class="section-title section-title-light title-underline">Virtual tour</h2>
+        <div class="visiting-cards section-inner">
+          <a href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736"
+            class="card">
+            <img src="./assets/img/galery/RoyalPalace.jpg" alt="photo: Royal Palace">
+            <h3 class="section-title card-title title-underline card-title-underline">Royal Palace</h3>
+            <p class="card-tour">360° Virtual Tour</p>
+            <p class="card-google">Google Street Panorama View</p>
+          </a>
+          <a href="https://www.google.com/maps/@48.8563254,2.3352706,3a,75y,90t/data=!3m7!1e1!3m5!1sAF1QipNRj_CwP4coDMYdCHj6qHeBeJpI2VxU5BUsOX4F!2e10!3e12!7i11000!8i5500"
+            class="card">
+            <img src="./assets/img/galery/DenonWing.jpg" alt="photo: Denon Wing">
+            <h3 class="section-title card-title title-underline card-title-underline">Denon Wing</h3>
+            <p class="card-tour">360° Virtual Tour</p>
+            <p class="card-google">Google Street Panorama View</p>
+          </a>
+          <a href="https://www.google.com/maps/@48.8601723,2.3395439,3a,88.4y,322.04h,84.25t/data=!3m7!1e1!3m5!1sAF1QipNMZGQuEA-pAUvIG_eP_2f3gWTKZEJ6XLVJ-Pgb!2e10!3e12!7i10240!8i5120"
+            class="card">
+            <img src="./assets/img/galery/ColonnadePerrault.jpg" alt="photo: Colonnade Perrault">
+            <h3 class="section-title card-title title-underline card-title-underline">Colonnade Perrault</h3>
+            <p class="card-tour">360° Virtual Tour</p>
+            <p class="card-google">Google Street Panorama View</p>
+          </a>
+          <a href="https://www.google.com/maps/@48.860183,2.3356156,3a,90y,177.69h,95.61t/data=!3m7!1e1!3m5!1sAF1QipP7uFZnTITRe-7AEVAgHAfqiCL-03gvBHcYWgF3!2e10!3e12!7i5472!8i2736"
+            class="card">
+            <img src="./assets/img/galery/GreekHall.jpg" alt="photo: Greek hall">
+            <h3 class="section-title card-title title-underline card-title-underline">Greek hall</h3>
+            <p class="card-tour">360° Virtual Tour</p>
+            <p class="card-google">Google Street Panorama View</p>
+          </a>
+          <a href="https://www.google.com/maps/@48.8598788,2.3355157,3a,82.2y,7.53h,94t/data=!3m7!1e1!3m5!1sAF1QipO1wkUUbyzpPjj-OR0mR5etZJT-xl-40XK8rDQ3!2e10!3e12!7i10240!8i5120"
+            class="card">
+            <img src="./assets/img/galery/MonaLisa.jpg" alt="photo: Mona Lisa">
+            <h3 class="section-title card-title title-underline card-title-underline">Mona Lisa</h3>
+            <p class="card-tour">360° Virtual Tour</p>
+            <p class="card-google">Google Street Panorama View</p>
+          </a>
+          <a href="https://www.google.com/maps/@48.8563254,2.3352706,3a,90y,21.26h,79.91t/data=!3m7!1e1!3m5!1sAF1QipPpGAowYatVyk3MMGnZAaQkYm2EUk-Dlca06SS5!2e10!3e12!7i11304!8i5652"
+            class="card">
+            <img src="./assets/img/galery/NightPalace.jpg" alt="photo: Night Palace">
+            <h3 class="section-title card-title title-underline card-title-underline">Night Palace</h3>
+            <p class="card-tour">360° Virtual Tour</p>
+            <p class="card-google">Google Street Panorama View</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="section dark-section" id="explore">
+      <div class="container section-explore">
+        <div class="section-explore-text">
+          <h2 class="section-title section-title-dark title-underline">Picture explore</h2>
+          <p class="section-inner">Las Meninas is a 1656 painting by Diego Velázquez, the leading <br> artist of the
+            Spanish Golden Age.</p>
+          <p>It was cleaned in 1984 to remove a <span>"yellow veil"</span> of dust that had gathered since the previous
+            restoration in the 19th century.</p>
+          <p>The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it
+            looked different.</p>
+        </div>
+        <img src="assets/img/explore-slider/before.jpg" class="section-explore-img" alt="slider">
+      </div>
+    </section>
+    <section class="section" id="video">
+      <div class="container">
+        <h2 class="section-title section-title-light">Video journey</h2>
+
+      </div>
+    </section>
+    <section class="section dark-section" id="gallery">
+      <div class="container">
+        <h2 class="section-title section-title-dark">Art gallery</h2>
+        <div class="picture-container">
+          <div class="picture-inner-container">
+            <img src="assets/img/galery/galery1.jpg" alt="photo: pictures and sculptures">
+            <img src="assets/img/galery/galery2.jpg" alt="photo: pictures and sculptures">
+            <img src="assets/img/galery/galery3.jpg" alt="photo: pictures and sculptures">
+            <img src="assets/img/galery/galery4.jpg" alt="photo: pictures and sculptures">
+            <img src="assets/img/galery/galery5.jpg" alt="photo: pictures and sculptures">
+            <img src="assets/img/galery/galery6.jpg" alt="photo: pictures and sculptures">
+            <img src="assets/img/galery/galery7.jpg" alt="photo: pictures and sculptures">
+            <img src="assets/img/galery/galery8.jpg" alt="photo: pictures and sculptures">
+            <img src="assets/img/galery/galery9.jpg" alt="photo: pictures and sculptures">
+            <img src="assets/img/galery/galery10.jpg" alt="photo: pictures and sculptures">
+            <img src="assets/img/galery/galery11.jpg" alt="photo: pictures and sculptures">
+            <img src="assets/img/galery/galery12.jpg" alt="photo: pictures and sculptures">
+            <img src="assets/img/galery/galery13.jpg" alt="photo: pictures and sculptures">
+            <img src="assets/img/galery/galery14.jpg" alt="photo: pictures and sculptures">
+            <img src="assets/img/galery/galery15.jpg" alt="photo: pictures and sculptures">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="tickets">
+      <div class="container">
+        <h2 class="section-title section-title-light title-underline">Buy tickets</h2>
+
+      </div>
+    </section>
+    <div class="parallax"></div>
+    <section class="section" id="contacts">
+      <div class="container">
+        <h2 class="section-title section-title-light title-underline">Contacts</h2>
+        <div class="contacts section-inner">
+          <div class="contacts-info">
+            <h4>Palais Royal <br> Musee du Louvre</h4>
+            <p>address: 75001 Paris, France</p>
+            <p>
+              phone:
+              <a href="tel:+33(0)140205050">+33(0) 1 40 20 50 50</a>
+            </p>
+            <p>
+              mail:
+              <a href="mailto:info@louvre.fr">info@louvre.fr</a>
+            </p>
+          </div>
+          <img src="assets/img/Map.jpg" alt="map">
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer dark-section">
+    <div class="line">
+      <div class="container container-flex">
+        <div class="footer-navbar">
+          <div class="footer-links">
+            <img src="assets/svg/footer-logo.svg" alt="logo">
+            <nav class="footer-nav">
+              <ul>
+                <li>
+                  <a href="#visiting" class="dark-link">Visiting</a>
+                </li>
+                <li>
+                  <a href="#explore" class="dark-link">Explore</a>
+                </li>
+                <li>
+                  <a href="#video" class="dark-link">Video</a>
+                </li>
+                <li>
+                  <a href="#gallery" class="dark-link">Gallery</a>
+                </li>
+                <li>
+                  <a href="#tickets" class="dark-link">Tickets</a>
+                </li>
+                <li>
+                  <a href="#contacts" class="dark-link">Contacts</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="footer-icons">
+          <a class="dark-link icon" href="">
+            <img src="assets/svg/YouTube.svg" alt="icon: you-tube">
+          </a>
+          <img src="assets/svg/YouTube.svg" alt="icon: you-tube">
+        </div>
+      </div>
+    </div>
+    <div class="container footer-flex">
+      <p>© 2021</p>
+      <p>
+        <a class="dark-link" href="https://rs.school/js/">
+          The Rolling Scopes School
+        </a>
+      </p>
+      <p>
+        <a class="dark-link" href="#">VeronikaBogdan</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
 
 </body>
+
 </html>
