@@ -93,10 +93,10 @@ h4 {
 .dark-link {
   font-family: Roboto-Thin;
   color: var(--font-light);
-  font-size: var(--size-text);
+  font-size: var(--font3);
   line-height: 26px;
   letter-spacing: 2px;
-	transition: all 0.3s ease-in-out;
+	transition: all 0.5s ease-in;
 }
 a.dark-link:hover {
   color: var(--font-gold);
@@ -296,8 +296,17 @@ p span {
 	/* padding-top: 30px; */
 }
 
+.icon {
+	border-color: var(--font-light);
+	border-radius: 50%;
+}
+
 .line {
 	border-bottom: 3px solid #666;
+}
+.container-flex {
+	display: flex;
+	justify-content: space-between;
 }
 .footer-flex {
 	display: flex;
