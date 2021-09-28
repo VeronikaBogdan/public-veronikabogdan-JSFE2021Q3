@@ -288,17 +288,34 @@ p span {
 .footer-links {
 	display: flex;
 	padding-top: 55px;
+  padding-bottom: 25px;
+}
+.footer-links img {
+  align-items: flex-start;
 }
 .footer-nav ul{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	column-gap: 150px;
 	padding-left: 145px;
-	/* padding-top: 30px; */
 }
-
+.footer-nav ul li {
+  margin-bottom: 25px;
+}
+.footer-icons {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 162px;
+  margin-bottom: 55px;
+}
+.footer-icons li:first-child {
+  align-self: center;
+}
+.footer-icons li {
+  align-self: baseline;
+}
 .icon {
-	border-color: var(--font-light);
+	border-color: #666;
 	border-radius: 50%;
 }
 
