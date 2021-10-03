@@ -1,3 +1,5 @@
+'use strict';
+
 console.log(
 `Score: 87 / 150
 
@@ -53,3 +55,11 @@ console.log(
 - кнопке "Book" в форме покупки билетов добавлен ripple-эффект. Демо: https://50projects50days.com/projects/button-ripple-effect/
 - при перезагрузке (обновлении) страницы картины в блоке Galery отображаются в рандомном порядке`
 );
+
+function myFunction() {
+  let myTop = document.getElementById("myTopnav");
+
+	if (myTop.className === "navbar topnav") {
+		myTop.className += " responsive";
+	}
+}
