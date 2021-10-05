@@ -339,6 +339,16 @@ p span {
   display: none;
 }
 
+
+
+.slider-img,
+.slider-menu {
+  display: none;
+}
+
+
+
+
 @media (max-width: 1330px) {
   .container {
     max-width: 1290px;
@@ -528,13 +538,32 @@ p span {
   .container {
     max-width: 728px;
   }
+  .title {
+    text-align: center;
+    padding: 0;
+    width: inherit;
+  }
+  .section:first-child {
+    padding: 0;
+  }
+  .slider-img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .slider-menu {
+    padding: 30px 0;
+  }
+  
+
+
+
   .section-inner {
     padding-top: 63px;
   }
   h4 {
-    font-size: var(--font2);
-    line-height: 33px;
-    padding-bottom: 50px;
+    line-height: 23px;
+    padding-bottom: 40px;
   }
 
   .section {
@@ -588,6 +617,7 @@ p span {
     padding-top: 62px;
     align-self: center;
   }
+  .red-button-louvre,
   .section-explore-text p,
   .explore-br {
     display: none;
@@ -610,8 +640,5 @@ p span {
   .contacts img {
     max-width: inherit;
     max-height: auto;
-  }
-  .contacts-info p {
-    padding-bottom: 15px;
   }
 }
