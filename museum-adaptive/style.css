@@ -641,4 +641,7 @@ p span {
     max-width: inherit;
     max-height: auto;
   }
+  .line .container-flex {
+    flex-direction: column;
+  }
 }
