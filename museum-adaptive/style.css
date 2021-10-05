@@ -339,7 +339,7 @@ p span {
   display: none;
 }
 
-@media (max-width: 1330px){
+@media (max-width: 1330px) {
   .container {
     max-width: 1290px;
   }
@@ -356,8 +356,8 @@ p span {
   }
   .contacts img {
     width: 100%;
-    max-width: 694px;
-    max-height: 454px;
+    /* max-width: 694px; */
+    height: auto;
   }
 }
 
@@ -372,9 +372,9 @@ p span {
   .container {
     max-width: 984px;
   }
-  .title-underline::after {
+  /* .title-underline::after {
     max-width: ;
-  }
+  } */
   p {
     font-size: var(--font3);
   }
@@ -427,9 +427,7 @@ p span {
   }
 
   .section-explore {
-    display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
   }
   .section-explore-text {
     max-width: inherit;
@@ -437,10 +435,6 @@ p span {
   .section-explore-text p {
     padding-bottom: 0px;
     line-height: 38px;
-    font-weight: 300;
-  }
-  p span {
-    color: #caaa7d;
   }
   .section-explore-img {
     width: 100%;
@@ -454,10 +448,9 @@ p span {
     display: none;
   }
 
-
   .picture-container {
     padding-top: 60px;
-    height: 1500px;
+    height: 1600px;
   }
   .picture-inner-container {
     column-gap: 36px;
@@ -476,13 +469,11 @@ p span {
   .contacts img {
     width: 100%;
     max-width: 694px;
-    max-height: 454px;
+    height: auto;
   }
   .contacts-info p {
     padding-bottom: 15px;
   }
-
-
 
   .topnav a {
     display: none;
@@ -528,30 +519,97 @@ p span {
 
 @media (max-width: 768px) {
   :root {
-    --font1: 50px;
-    --font2: 24px;
-    --font3: 20px;
+    --font1: 40px;
+    --font2: 20px;
+    --font3: 18px;
     --font4: 16px;
-    --f-card: 28px;
+    --f-card: 22px;
   }
   .container {
-    margin: 0 auto;
     max-width: 728px;
   }
   .section-inner {
     padding-top: 63px;
   }
-
-
-
-  .contacts {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
+  h4 {
+    font-size: var(--font2);
+    line-height: 33px;
+    padding-bottom: 50px;
   }
+
+  .section {
+    padding: 40px 0;
+  }
+  .section-title {
+    line-height: 60px;
+  }
+  .section-inner {
+    padding-top: 63px;
+  }
+  .visiting-cards {
+    gap: 40px 56px;
+  }
+  .card img {
+    width: 100%;
+    max-width: 280px;
+    height: 180px;
+  }
+  .card-title {
+    font-size: var(--f-card);
+    line-height: 31px;
+    letter-spacing: 3px;
+  }
+  .card-title-underline::after {
+    bottom: -10px;
+    max-width: 150px;
+  }
+  .card-title-underline:hover::after {
+    max-width: 330px;
+  }
+  .card-tour,
+  .card-google {
+    font-size: var(--font3);
+    line-height: 23px;
+    padding-top: 22px;
+  }
+  .card-google {
+    font-size: var(--font4);
+    padding-top: 10px;
+  }
+
+  .section-explore,
+  .contacts {
+    flex-direction: column;
+  }
+  .section-explore-img {
+    width: 100%;
+    max-width: 720px;
+    max-height: 700px;
+    padding-top: 62px;
+    align-self: center;
+  }
+  .section-explore-text p,
+  .explore-br {
+    display: none;
+  }
+
+  .picture-container {
+    padding-top: 40px;
+    height: 1000px;
+  }
+  .picture-inner-container {
+    column-gap: 24px;
+    column-count: 2;
+    width: 100%;
+  }
+  .picture-inner-container img:nth-child(9),
+  .picture-inner-container img:nth-child(11) {
+    margin-top: 0px;
+  }
+
   .contacts img {
-    max-width: 694px;
-    max-height: 454px;
+    max-width: inherit;
+    max-height: auto;
   }
   .contacts-info p {
     padding-bottom: 15px;
