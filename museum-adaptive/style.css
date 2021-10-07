@@ -707,6 +707,9 @@ p span {
   .container {
     max-width: 380px;
   }
+  .title {
+    height: 544px;
+  }
   .title p {
     padding-top: 22px;
     padding-bottom: 50px;
@@ -722,7 +725,13 @@ p span {
   }
   .footer-nav ul {
     display: flex;
-    /* flex-direction: column; */
     flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column; 
+    max-height: 109px;
+    padding-left: 0;
+  }
+  .footer-flex p:nth-child(2) {
+    display: none;
   }
 }
