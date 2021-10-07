@@ -1,7 +1,7 @@
 'use strict';
 
 console.log(
-// `Score: 87 / 150`
+`Score: 87 / 150`
 
 );
 
