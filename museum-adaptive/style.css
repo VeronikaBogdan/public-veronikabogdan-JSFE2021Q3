@@ -339,15 +339,10 @@ p span {
   display: none;
 }
 
-
-
 .slider-img,
 .slider-menu {
   display: none;
 }
-
-
-
 
 @media (max-width: 1330px) {
   .container {
@@ -378,6 +373,12 @@ p span {
   }
 }
 
+@media (max-width: 1050px) {
+  .section-explore-img {
+    max-width: 695px;
+    height: auto;
+  }
+}
 
 @media (max-width: 1024px) {
   :root {
@@ -563,14 +564,10 @@ p span {
     display: block;
     width: 100%;
     height: auto;
-
   }
   .slider-menu {
     padding: 30px 0;
   }
-  
-
-
 
   .section-inner {
     padding-top: 63px;
@@ -598,7 +595,6 @@ p span {
     height: 180px;
   }
   .card-title {
-    font-size: var(--f-card);
     line-height: 31px;
     letter-spacing: 3px;
   }
@@ -611,12 +607,10 @@ p span {
   }
   .card-tour,
   .card-google {
-    font-size: var(--font3);
     line-height: 23px;
     padding-top: 22px;
   }
   .card-google {
-    font-size: var(--font4);
     padding-top: 10px;
   }
 
@@ -660,6 +654,7 @@ p span {
     flex-direction: column;
   }
   .footer-nav ul {
+    column-gap: 184px;
     padding-left: 104px;
   }
   .footer-icons {
@@ -672,5 +667,62 @@ p span {
   }
   .footer-flex p {
     font-size: var(--f-card);
+  }
+}
+@media (max-width: 670px) {
+  .container {
+    max-width: 610px;
+  }
+  .footer-nav ul {
+    column-gap: 3em;
+    padding-left: 104px;
+  }
+}
+
+@media (max-width: 520px) {
+  .container {
+    max-width: 480px;
+  }
+  .footer-nav ul {
+    column-gap: 1em;
+    padding-left: 104px;
+  }
+  .footer-links {
+    flex-direction: column;
+  }
+  .footer-icons {
+    padding-left: 0;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    --font1: 28px;
+    --font2: 16px;
+    --font3: 16px;
+    --font4: 16px;
+    --f-card: 18px;
+  }
+  .container {
+    max-width: 380px;
+  }
+  .title p {
+    padding-top: 22px;
+    padding-bottom: 50px;
+  }
+  .picture-container {
+    padding-top: 40px;
+    height: 650px;
+  }
+  .picture-inner-container {
+    column-gap: 24px;
+    column-count: 2;
+    width: 100%;
+  }
+  .footer-nav ul {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
   }
 }
