@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="assets/favicon.ico">
 
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.js'></script>
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.43.0/mapbox-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 
 <body>
@@ -43,7 +43,7 @@
         </ul>
       </nav>
 
-      <div class="topnav">
+      <div class="topnav nav-icon">
         <a href="javascript:void(0);" class="icon-open" onclick="myFunction()">
           <i class="fa fa-bars" id="button"></i>
         </a>
@@ -182,7 +182,8 @@
               <a href="mailto:info@louvre.fr">info@louvre.fr</a>
             </p>
           </div>
-          <img src="assets/img/Map.jpg" alt="map">
+          <div class="contacts-map"  id="map"></div>
+          <!-- <img src="assets/img/Map.jpg" class="contacts-map" alt="map"> -->
         </div>
       </div>
     </section>
@@ -263,7 +264,8 @@
 
   <script src="js/script.js"></script>
   <script src="js/gallery.js"></script>
-  <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+  <!-- <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script> -->
+  <!-- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script> -->
 
 </body>
 
