@@ -24,12 +24,18 @@
 }
 
 :root {
-  --font-black: #000;
+  --font-black: #fff;
+  --font-light: #000;
+  --bg-dark: #eeeeee;
+  --dark-red: #710707;
+  --font-gold: #d3943c;
+  --link-active: #7e6c51;
+	/* --font-black: #000;
   --font-light: #fff;
   --bg-dark: #030303;
   --dark-red: #710707;
   --font-gold: #9d8665;
-  --link-active: #7e6c51;
+  --link-active: #7e6c51; */
   --font1: 80px;
   --font2: 28px;
   --font3: 22px;
@@ -43,6 +49,8 @@
 html {
   font-family: Roboto-Regular;
   scroll-behavior: smooth;
+	background: #030303;
+	color: #fff;
 }
 a {
   text-decoration: none;
@@ -347,7 +355,7 @@ p span {
 
 .contacts-map {
   width: 70%;
-  height: inherit;
+  height: 620px;
 }
 
 
@@ -655,7 +663,7 @@ p span {
   .contacts-map {
     padding-top: 28px;
     max-width: inherit;
-    max-height: 476px;
+    height: 450px;;
   }
   .line .container-flex {
     flex-direction: column;
@@ -700,6 +708,11 @@ p span {
   .footer-icons {
     padding-left: 0;
     justify-content: center;
+  }
+	.contacts-map {
+    padding-top: 28px;
+    max-width: inherit;
+    height: 248px;
   }
 }
 
