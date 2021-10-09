@@ -55,3 +55,29 @@ mapPopup.forEach(point => {
 document.querySelectorAll('.leaflet-marker-icon').forEach(i => (i == 0 ? i.style.opacity = 1 : i.style.opacity = 0.6));
 
 })();
+
+
+// Theme
+
+const buttonTheme = document.querySelector('.button-theme'),
+		 	buttonThemeCl = document.querySelector('.button-theme-cl'),
+			themeIcon = document.querySelector('.icon-theme-open');
+
+buttonTheme.addEventListener("click", () => {
+	themeIcon.setAttribute('src','assets/svg/dark_mode_black_24dp.svg'); //меняем цвет иконки, устанавливая в src нужную иконку
+	buttonTheme.classList.toggle('button-theme-cl');
+	buttonThemeCl.classList.toggle('button-theme');
+	buttonThemeCl.classList.remove('button-theme-cl');
+
+
+});
+
+buttonThemeCl.addEventListener("click", () => {
+	themeIcon.setAttribute('src','assets/svg/dark_mode_white_24dp.svg'); //меняем цвет иконки, устанавливая в src нужную иконку
+	buttonTheme.classList.toggle('button-theme-cl');
+	buttonThemeCl.classList.remove('button-theme');
+	buttonThemeCl.classList.toggle('button-theme-cl');
+
+
+
+});

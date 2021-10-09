@@ -24,18 +24,17 @@
 }
 
 :root {
-  --font-black: #fff;
+  /* --font-black: #fff;
   --font-light: #000;
   --bg-dark: #eeeeee;
   --dark-red: #710707;
-  --font-gold: #d3943c;
-  --link-active: #7e6c51;
-	/* --font-black: #000;
+  --font-gold: #d3943c; */
+	--font-black: #000;
   --font-light: #fff;
   --bg-dark: #030303;
   --dark-red: #710707;
   --font-gold: #9d8665;
-  --link-active: #7e6c51; */
+  --link-active: #7e6c51;
   --font1: 80px;
   --font2: 28px;
   --font3: 22px;
@@ -49,8 +48,10 @@
 html {
   font-family: Roboto-Regular;
   scroll-behavior: smooth;
-	background: #030303;
-	color: #fff;
+
+
+	/* background: #030303;
+	color: #fff; */
 }
 a {
   text-decoration: none;
@@ -357,6 +358,21 @@ p span {
   width: 70%;
   height: 620px;
 }
+button {
+	padding: 0;
+	border: none;
+	cursor: pointer;
+	background: inherit;
+}
+.button-theme {
+	display: block;
+}
+.button-theme-cl {
+	display: none;
+}
+.bn {
+	display: none;
+}
 
 
 @media (max-width: 1330px) {
@@ -500,10 +516,14 @@ p span {
     display: flex;
     justify-content: space-between;
   }
-  .contacts-map {
+  /* .contacts-map {
     width: 100%;
     max-width: 694px;
     height: auto;
+  } */
+	.contacts-map {
+    width: calc(100vw - 330px);
+    height: calc(65vw - 212px);
   }
   .contacts-info p {
     padding-bottom: 15px;
