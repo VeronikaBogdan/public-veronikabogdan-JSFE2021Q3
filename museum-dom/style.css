@@ -24,11 +24,6 @@
 }
 
 :root {
-  /* --font-black: #fff;
-  --font-light: #000;
-  --bg-dark: #eeeeee;
-  --dark-red: #710707;
-  --font-gold: #d3943c; */
 	--font-black: #000;
   --font-light: #fff;
   --bg-dark: #030303;
@@ -370,9 +365,82 @@ button {
 .button-theme-cl {
 	display: none;
 }
-.bn {
-	display: none;
+
+
+/* Slider */
+.section-explore-img img {
+	max-width: 720px;
+  max-height: 700px;
+	width:100%;
+	display:block;
+
 }
+.container-explore {
+  width:50%;
+  display:block;
+  margin:30px auto
+}
+
+#before-after-slider {
+  width:100%;
+  position:relative;
+  overflow:hidden;
+}
+
+#after-image {
+  display:block
+}
+
+#before-image {
+  position:absolute;
+  height:100%;
+  width:50%;
+  top:0;
+  left:0;
+  overflow:hidden;
+  z-index:2;
+}
+#before-image > img {
+	width: 720px;
+	height: inherit;
+} 
+
+#resizer {
+  position:absolute;
+  display:flex;
+  align-items:center;
+  z-index:5;
+  top:0;
+  left:50%;
+  height:100%;
+  width:4px;
+  background:white;
+  /*Stop vertical scrolling on touch*/
+  -ms-touch-action: pan-y;
+    touch-action: pan-y;
+}
+
+#resizer:after {
+  /* background:linear-gradient(62deg,#c93072 5%,#3365c0); */
+  font-family: "Font Awesome 5 Free";
+  content:'\f337';
+  font-weight:900;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  position:absolute;
+  margin: 0 0 0 -22px;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  border:4px solid white;
+
+}
+
+
+
+
 
 
 @media (max-width: 1330px) {
