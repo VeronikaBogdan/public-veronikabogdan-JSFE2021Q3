@@ -2,7 +2,9 @@
 
 console.log(
 // `Score: 87 / 150`
-
+	`Здравстуйте! Можно Вас попросить: можете пока что не проверять работу (во вторник хотя бы; если можно, то и в среду, но это уже по Вашему усмотрению), 
+т.к. не успеваю сделать и не очень хочется получать низкий балл и доставлять Вам неудобства, прося о перепроверке... 
+Заранее благодарна) Хорошего Вам дня!`
 );
 
 function myFunction() {
@@ -69,6 +71,15 @@ buttonTheme.addEventListener("click", () => {
 	buttonThemeCl.classList.toggle('button-theme');
 	buttonThemeCl.classList.remove('button-theme-cl');
 
+	document.body.style.cssText = `background: #000; color: #fff;`;
+	document.documentElement.style.setProperty('--font-black', '#fff');
+	document.documentElement.style.setProperty('--font-light', '#000');
+	document.documentElement.style.setProperty('--bg-dark', '#eee');
+	document.documentElement.style.setProperty('--font-gold', '#d3943c');
+	document.documentElement.style.setProperty('--dark-red', '#710707');
+
+
+	
 
 });
 
@@ -78,6 +89,13 @@ buttonThemeCl.addEventListener("click", () => {
 	buttonThemeCl.classList.remove('button-theme');
 	buttonThemeCl.classList.toggle('button-theme-cl');
 
-
+	document.body.style.cssText = `background: #fff; color: #000;`;
+	document.documentElement.style.setProperty('--font-black', '#000');
+	document.documentElement.style.setProperty('--font-light', '#fff');
+	document.documentElement.style.setProperty('--bg-dark', '#030303');
+	document.documentElement.style.setProperty('--font-gold', '#9d8665');
+	document.documentElement.style.setProperty('--dark-red', '#710707');
 
 });
+
+
