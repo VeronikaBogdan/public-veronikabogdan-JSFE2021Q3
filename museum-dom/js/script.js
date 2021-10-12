@@ -63,7 +63,8 @@ document.querySelectorAll('.leaflet-marker-icon').forEach(i => (i == 0 ? i.style
 
 const buttonTheme = document.querySelector('.button-theme'),
 		 	buttonThemeCl = document.querySelector('.button-theme-cl'),
-			themeIcon = document.querySelector('.icon-theme-open');
+			themeIcon = document.querySelector('.icon-theme-open'),
+			arrImages = document.images;
 
 buttonTheme.addEventListener("click", () => {
 	themeIcon.setAttribute('src','assets/svg/dark_mode_black_24dp.svg'); //меняем цвет иконки, устанавливая в src нужную иконку
@@ -78,8 +79,11 @@ buttonTheme.addEventListener("click", () => {
 	document.documentElement.style.setProperty('--font-gold', '#d3943c');
 	document.documentElement.style.setProperty('--dark-red', '#710707');
 
-
-	
+	for(let key of arrImages) {
+		if(key.classList.contains('logo')){
+			key.setAttribute('src','assets/svg/logoBlack.svg');
+		}
+	}
 
 });
 
@@ -96,6 +100,10 @@ buttonThemeCl.addEventListener("click", () => {
 	document.documentElement.style.setProperty('--font-gold', '#9d8665');
 	document.documentElement.style.setProperty('--dark-red', '#710707');
 
+	for(let key of arrImages) {
+		if(key.classList.contains('logo')){
+			key.setAttribute('src','assets/svg/logo.svg');
+		}
+	}
+
 });
-
-
