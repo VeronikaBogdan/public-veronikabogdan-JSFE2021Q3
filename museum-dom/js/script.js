@@ -114,8 +114,8 @@ function pauseEvent(e){
 
 //! Gallery
 
-// Как это выглядит у меня
-// (Секция где скролл называется .gallery, к каждой картинке добавляются нужные атрибуты)
+const pictureInnerContainer = document.querySelector('.picture-inner-container');
+
 AOS.init({
 	delay: 300,
 	duration: 1000,
@@ -124,14 +124,14 @@ AOS.init({
 
 for (let i = 0; i < 15; i++) {
 	let img = document.createElement('img');
-	img.classList.add('picture-img');
+	img.classList.add('.picture-img');
 
 	img.setAttribute('data-aos', 'fade-up');
 	img.setAttribute('data-aos-anchor-placement', 'top-bottom');
 
 	img.setAttribute('alt', 'photo: pictures and sculptures');
-	img.src = `assets/img/galery/galery${i+1}.jpg`;   //вставка рандомом из массива, не обращай внимания
-	gallery.append(img);
+	img.src = `assets/img/galery/galery${i+1}.jpg`;  
+	pictureInnerContainer.append(img);
 }
 
 

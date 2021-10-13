@@ -242,12 +242,12 @@ p span {
 
 .picture-container {
   position: relative;
-  /* height: 1885px; */
+  height: 1885px;
   overflow-y: hidden;
   padding-top: 75px;
 }
 .picture-inner-container {
-  /* height: 3020px; */
+  height: 3020px;
   column-count: 3;
   column-gap: 36px;
   width: 100%;
