@@ -18,7 +18,7 @@ function myFunction() {
 
 
 
-// Explore Slider
+//! Explore Slider
 const slider = document.getElementById('before-after-slider');
 const before = document.getElementById('before-image');
 const beforeImage = before.getElementsByTagName('img')[0];
@@ -112,8 +112,41 @@ function pauseEvent(e){
 
 
 
+//! Gallery
 
-// Map in Contacts
+// Как это выглядит у меня
+// (Секция где скролл называется .gallery, к каждой картинке добавляются нужные атрибуты)
+AOS.init({
+	delay: 300,
+	duration: 1000,
+	targetSelector: '.picture-inner-container',
+});
+
+for (let i = 0; i < 15; i++) {
+	let img = document.createElement('img');
+	img.classList.add('picture-img');
+
+	img.setAttribute('data-aos', 'fade-up');
+	img.setAttribute('data-aos-anchor-placement', 'top-bottom');
+
+	img.setAttribute('alt', 'photo: pictures and sculptures');
+	img.src = `assets/img/galery/galery${i+1}.jpg`;   //вставка рандомом из массива, не обращай внимания
+	gallery.append(img);
+}
+
+
+//Это приколы самой библиотеки, это баг и это самое простое решение
+let scrollRef = 0;
+
+window.addEventListener('scroll', function () {
+	//aus bug solution
+	scrollRef <= 10 ? scrollRef++ : AOS.refresh();
+});
+
+
+
+
+//! Map in Contacts
 
 (function createMap() {
 const apiKey = 'pk.eyJ1IjoiYWxmcmVkMjAxNiIsImEiOiJja2RoMHkyd2wwdnZjMnJ0MTJwbnVmeng5In0.E4QbAFjiWLY8k3AFhDtErA';
@@ -154,7 +187,7 @@ document.querySelectorAll('.leaflet-marker-icon').forEach(i => (i == 0 ? i.style
 })();
 
 
-// Theme
+//! Theme
 
 const buttonTheme = document.querySelector('.button-theme'),
 		 	buttonThemeCl = document.querySelector('.button-theme-cl'),
