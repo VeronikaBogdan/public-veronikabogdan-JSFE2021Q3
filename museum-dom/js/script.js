@@ -24,6 +24,72 @@ function myFunction() {
 
 
 
+
+//! Welcome Slider
+
+var swiper = new Swiper(".mySwiper", {
+	spaceBetween: 5,
+	slidesPerView: 10,
+	grabCursor: true,
+	freeMode: false,
+	watchSlidesVisibility: false,
+	watchSlidesProgress: false,
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+	// loop: true, // бесконечная прокрутка
+});
+
+// верхний 
+var swiper2 = new Swiper(".mySwiper2", {
+	spaceBetween: 5,
+	grabCursor: true,
+	thumbs: {
+		swiper: swiper,
+	},
+	scrollbar: {
+		el: '.swiper-scrollbar',
+	},	
+});
+
+const arrImagesWelcome = document.images,
+			swiperSlide = document.querySelectorAll('.swiper-slide');
+console.log(swiperSlide);
+
+// swiperSlide.addEventListener("click", () => {
+// 	// for(let key of arrImages) {
+// 	// 	if(key.classList.contains('logo')){
+// 	// 		key.setAttribute('src','assets/svg/logoBlack.svg');
+// 	// 	}
+// 	// }
+// });
+
+
+
+// const swiper = new Swiper('.mySwiper2', {
+//   // Optional parameters
+//   direction: 'vertical',
+//   loop: true,
+
+//   // If we need pagination
+//   pagination: {
+//     el: '.swiper-pagination',
+//   },
+
+//   // Navigation arrows
+//   navigation: {
+//     nextEl: '.swiper-button-next',
+//     prevEl: '.swiper-button-prev',
+//   },
+
+//   // And if we need scrollbar
+//   scrollbar: {
+//     el: '.swiper-scrollbar',
+//   },
+// });
+
+
 //! Explore Slider
 const slider = document.getElementById('before-after-slider');
 const before = document.getElementById('before-image');
@@ -141,7 +207,6 @@ for (let i = 0; i < 15; i++) {
 }
 
 
-//Это приколы самой библиотеки, это баг и это самое простое решение
 let scrollRef = 0;
 
 window.addEventListener('scroll', function () {
