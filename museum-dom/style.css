@@ -222,6 +222,7 @@ a.dark-link:hover {
 
 .flex-cont {
 	/* display: flex; */
+	overflow: hidden;
 }
 
 .section-title-dark {

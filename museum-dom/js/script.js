@@ -1,10 +1,7 @@
 'use strict';
 
 console.log(	
-	`Здравстуйте! Можно Вас попросить: можете пока что не проверять работу (во вторник хотя бы; если можно, то и в среду, но это уже по Вашему усмотрению), 
-т.к. не успеваю сделать и не очень хочется получать низкий балл и доставлять Вам неудобства, прося о перепроверке... 
-Заранее благодарна) Хорошего Вам дня!
-	Score: 42 / 150`,
+	`Score: 46/ 150`,
 	`
 	1. Слайдер сравнения изображений в секции Explore +10
 	2. Анимация при прокрутке изображений в секции Galery +8
@@ -12,7 +9,7 @@ console.log(
 	4. Доп. функционал: ночная тема.. +10
 	5. Слайдер в секции Welcome: 
 			- есть возможность перелистывания слайдов кликами по буллетам (квадратики внизу слайдера) +2
-
+			-слайды перелистываются плавно с анимацией смещения вправо или влево +4 
 	`
 );
 
@@ -46,20 +43,26 @@ var swiper = new Swiper(".mySwiper", {
 
 // верхний 
 var swiper2 = new Swiper(".mySwiper2", {
-	spaceBetween: 0,
+	spaceBetween: 10,
+	speed: 900,
 	grabCursor: true,
+	watchSlidesVisibility: true,
+	watchSlidesProgress: true,
 	thumbs: {
 		swiper: swiper,
 	},
 	scrollbar: {
 		el: '.swiper-scrollbar',
 	},	
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
 });
 
 const arrSlideBtn = document.slideBtn,
 			swiperSlide = document.querySelectorAll('.swiper-slide'),
 			slideBtn = document.querySelectorAll('.slide-btn'),
-			// active = document.querySelectorAll('.'),
 			next = document.querySelector('.next');
 
 let k = 0;
@@ -70,39 +73,19 @@ for(let i = 0; i<slideBtn.length; i++) {
 }
 
 console.log(slideBtn);
-
-slideBtn.addEventListener("click", () => {
-	for(let key of slideBtn) {
-		console.log(key);
-		// if(key.classList.contains('logo')){
-		// 	key.setAttribute('src','assets/svg/logoBlack.svg');
-		// }
-	}
+slideBtn.addEventListener('click', () => {
+	next.classList.toggle('act');
 });
 
-
-
-// const swiper = new Swiper('.mySwiper2', {
-//   // Optional parameters
-//   direction: 'vertical',
-//   loop: true,
-
-//   // If we need pagination
-//   pagination: {
-//     el: '.swiper-pagination',
-//   },
-
-//   // Navigation arrows
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   },
-
-//   // And if we need scrollbar
-//   scrollbar: {
-//     el: '.swiper-scrollbar',
-//   },
+// slideBtn.addEventListener("click", () => {
+// 	for(let key of slideBtn) {
+// 		console.log(key);
+// 		// if(key.classList.contains('logo')){
+// 		// 	key.setAttribute('src','assets/svg/logoBlack.svg');
+// 		// }
+// 	}
 // });
+
 
 
 //! Explore Slider
@@ -116,14 +99,12 @@ let active = false;
 //Sort overflow out for Overlay Image
 document.addEventListener("DOMContentLoaded", function() {
   let width = /*slider.offsetWidth =*/ 720;
-  console.log(width);
   beforeImage.style.width = width + 'px';
 });
 
 //Adjust width of image on resize 
 window.addEventListener('resize', function() {
   let width = slider.offsetWidth;
-  console.log(width);
   beforeImage.style.width = width + 'px';
 })
 
