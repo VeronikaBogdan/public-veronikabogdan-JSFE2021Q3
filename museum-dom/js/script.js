@@ -72,10 +72,10 @@ for(let i = 0; i<slideBtn.length; i++) {
 
 }
 
-console.log(slideBtn);
-slideBtn.addEventListener('click', () => {
-	next.classList.toggle('act');
-});
+// console.log(slideBtn);
+// slideBtn.addEventListener('click', () => {
+// 	next.classList.toggle('act');
+// });
 
 // slideBtn.addEventListener("click", () => {
 // 	for(let key of slideBtn) {
