@@ -204,11 +204,17 @@ a.dark-link:hover {
 	padding-right: 20px;
 }
 .left-key,
-.right-key {
+.right-key,
+.slide-btn {
 	cursor: pointer;
 }
 
 
+
+/* .swiper-cont {
+	
+  overflow-x: hidden;
+} */
 .swiper-slide-active {
 	width: 16px;
 	margin-right: 25px;
@@ -452,7 +458,7 @@ button {
 #before-after-slider {
   width:100%;
   position:relative;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 #after-image {
@@ -465,7 +471,7 @@ button {
   width:50%;
   top:0;
   left:0;
-  overflow:hidden;
+  overflow: hidden;
   z-index:2;
 }
 #before-image > img {

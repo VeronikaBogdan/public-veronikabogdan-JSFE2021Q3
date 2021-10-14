@@ -4,12 +4,15 @@ console.log(
 	`Здравстуйте! Можно Вас попросить: можете пока что не проверять работу (во вторник хотя бы; если можно, то и в среду, но это уже по Вашему усмотрению), 
 т.к. не успеваю сделать и не очень хочется получать низкий балл и доставлять Вам неудобства, прося о перепроверке... 
 Заранее благодарна) Хорошего Вам дня!
-	Score: 40 / 150`,
+	Score: 42 / 150`,
 	`
 	1. Слайдер сравнения изображений в секции Explore +10
 	2. Анимация при прокрутке изображений в секции Galery +8
 	3. Интерактивная карта в секции Contacts +12
 	4. Доп. функционал: ночная тема.. +10
+	5. Слайдер в секции Welcome: 
+			- есть возможность перелистывания слайдов кликами по буллетам (квадратики внизу слайдера) +2
+
 	`
 );
 
@@ -29,7 +32,7 @@ function myFunction() {
 
 var swiper = new Swiper(".mySwiper", {
 	spaceBetween: 5,
-	slidesPerView: 10,
+	slidesPerView: 35,
 	grabCursor: true,
 	freeMode: false,
 	watchSlidesVisibility: false,
@@ -43,7 +46,7 @@ var swiper = new Swiper(".mySwiper", {
 
 // верхний 
 var swiper2 = new Swiper(".mySwiper2", {
-	spaceBetween: 5,
+	spaceBetween: 0,
 	grabCursor: true,
 	thumbs: {
 		swiper: swiper,
@@ -53,17 +56,29 @@ var swiper2 = new Swiper(".mySwiper2", {
 	},	
 });
 
-const arrImagesWelcome = document.images,
-			swiperSlide = document.querySelectorAll('.swiper-slide');
-console.log(swiperSlide);
+const arrSlideBtn = document.slideBtn,
+			swiperSlide = document.querySelectorAll('.swiper-slide'),
+			slideBtn = document.querySelectorAll('.slide-btn'),
+			// active = document.querySelectorAll('.'),
+			next = document.querySelector('.next');
 
-// swiperSlide.addEventListener("click", () => {
-// 	// for(let key of arrImages) {
-// 	// 	if(key.classList.contains('logo')){
-// 	// 		key.setAttribute('src','assets/svg/logoBlack.svg');
-// 	// 	}
-// 	// }
-// });
+let k = 0;
+
+for(let i = 0; i<slideBtn.length; i++) {
+		console.log(slideBtn[i].classList.contains('active'), k=i);
+
+}
+
+console.log(slideBtn);
+
+slideBtn.addEventListener("click", () => {
+	for(let key of slideBtn) {
+		console.log(key);
+		// if(key.classList.contains('logo')){
+		// 	key.setAttribute('src','assets/svg/logoBlack.svg');
+		// }
+	}
+});
 
 
 
