@@ -6,23 +6,20 @@ const dateT = document.querySelector('.date');
 
 function showTime() {
   const date = new Date();
-  const currentTime = date.toLocaleTimeString();
-  timeT.textContent = currentTime;
+  
+  timeT.textContent = date.toLocaleTimeString();
   setTimeout(showTime, 1000);
+  showDate();
 }
 
 function showDate() {
   const date = new Date();
   const options = {month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', timeZone: 'UTC'};
-  const currentDate = date.toLocaleDateString('en-US', options);
-
-  dateT.textContent = currentDate;
-  
+ 
+  dateT.textContent = date.toLocaleDateString('en-US', options);
   setTimeout(showDate, 1000);
-
 }
 
 
 
 showTime();
-showDate();
