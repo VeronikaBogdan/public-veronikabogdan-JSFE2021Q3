@@ -3,7 +3,8 @@
 //! Time and calendar
 const timeT = document.querySelector(".time"),
       dateT = document.querySelector('.date'),
-      greeting = document.querySelector('.greeting');
+      greeting = document.querySelector('.greeting'),
+			name = document.querySelector('.name');
 
 function showTime() {
   const date = new Date();
@@ -18,9 +19,10 @@ function showTime() {
 
 function showDate() {
   const date = new Date();
-  const options = {month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'};
+  const options = {weekday: 'long', month: 'long', day: 'numeric'/*, hour: 'numeric', minute: 'numeric'*/};
  
-  dateT.textContent = date.toLocaleDateString('ru-RU', options);
+  // dateT.textContent = date.toLocaleDateString('ru-RU', options);
+  dateT.textContent = date.toLocaleDateString('en-Br', options);
   setTimeout(showDate, 1000);
 }
 
@@ -44,7 +46,17 @@ function showGreeting() {
 	greeting.textContent = greetingText;
 }
 
+function setLocalStorage() {
+  localStorage.setItem('name', name.value);
+}
+window.addEventListener('beforeunload', setLocalStorage);
+
+function getLocalStorage() {
+  if(localStorage.getItem('name')) {
+    name.value = localStorage.getItem('name');
+  }
+}
+window.addEventListener('load', getLocalStorage);
+
 
 showTime();
-getHours();
-// getTimeOfDay();
