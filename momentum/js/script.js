@@ -7,12 +7,16 @@ const timeT = document.querySelector(".time"),
   name = document.querySelector(".name"),
   slideNext = document.querySelector(".slide-next"),
   slidePrev = document.querySelector(".slide-prev");
+
 const weatherIcon = document.querySelector(".weather-icon");
 const temperature = document.querySelector(".temperature");
 const weatherDescription = document.querySelector(".weather-description");
 const wind = document.querySelector(".wind");
 const humidity = document.querySelector(".humidity");
 const city = document.querySelector(".city");
+
+const quote = document.querySelector(".quote"),
+		  author = document.querySelector(".author");
 
 let randomNum;
 
@@ -147,6 +151,21 @@ city.addEventListener("change", getWeather);
 
 window.addEventListener("beforeunload", setLocalStorageCity);
 window.addEventListener("load", getLocalStorageCity);
+
+
+//! Quote of the Day
+async function getQuotes() {  
+  const quotes = 'data.json';
+  const res = await fetch(quotes);
+  const data = await res.json(); 
+  console.log(data);
+  console.log(data[randomNum]);
+
+	quote.textContent = data[randomNum].text;
+	author.textContent = data[randomNum].author;
+}
+getQuotes();
+
 
 setBg();
 getRandomNum();
