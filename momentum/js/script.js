@@ -1,12 +1,13 @@
 "use strict";
 
-//! Time and calendar
+import playList from './playList.js';
+
 const timeT = document.querySelector(".time"),
-  dateT = document.querySelector(".date"),
-  greeting = document.querySelector(".greeting"),
-  name = document.querySelector(".name"),
-  slideNext = document.querySelector(".slide-next"),
-  slidePrev = document.querySelector(".slide-prev");
+			dateT = document.querySelector(".date"),
+			greeting = document.querySelector(".greeting"),
+			name = document.querySelector(".name"),
+			slideNext = document.querySelector(".slide-next"),
+			slidePrev = document.querySelector(".slide-prev");
 
 const weatherIcon = document.querySelector(".weather-icon");
 const temperature = document.querySelector(".temperature");
@@ -19,8 +20,15 @@ const quote = document.querySelector(".quote"),
 		  author = document.querySelector(".author"),
 		  changeQuote = document.querySelector(".change-quote");
 
-let randomNum;
+const playBtn = document.querySelector('.play');
+const btnPlayNext = document.querySelector('.play-next');
+const btnPlayPrev = document.querySelector('.play-prev');
 
+let randomNum;
+let isPlay = false;
+let playNum = 0;
+
+//! Time and calendar
 function showTime() {
   const date = new Date();
 
@@ -119,7 +127,6 @@ slidePrev.addEventListener("click", getSlidePrev);
 // https://api.openweathermap.org/data/2.5/weather?q=Минск&lang=en&appid=48cf984e10a9ac711807ab631f98791d&units=imperial
 
 async function getWeather() {
-  console.log(city.value);
   if (city.value != "") {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=en&appid=48cf984e10a9ac711807ab631f98791d&units=metric`;
     // const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.textContent}&lang=ru&appid=48cf984e10a9ac711807ab631f98791d&units=metric`;
@@ -156,7 +163,7 @@ window.addEventListener("load", getLocalStorageCity);
 
 //! Quote of the Day
 async function getQuotes() {  
-  const quotes = 'dataRU.json';
+  const quotes = 'dataEN.json';
   const res = await fetch(quotes);
   const data = await res.json(); 
 
@@ -168,6 +175,55 @@ async function getQuotes() {
 
 getQuotes();
 changeQuote.addEventListener("click", getQuotes);
+
+//! Audio player
+const audio = new Audio();
+
+function playAudio() {
+  audio.src = playList[playNum].src;
+  audio.currentTime = 0;
+  audio.play();
+	isPlay = true;
+}
+
+function pauseAudio() {
+  audio.pause();
+	isPlay = false;
+}
+
+function startOrStopAudio(){
+	!isPlay ? playAudio() : pauseAudio();
+	// !isPlay ? playBtn.classList.remove('pause') : playBtn.classList.add('pause');
+}
+function changePlayButton(){
+	!isPlay ? playBtn.classList.remove('pause') : playBtn.classList.add('pause');
+}
+
+function playNext() {
+  playNum == 3 ? (playNum = 0) : playNum++;
+	console.log(playNum);
+	playAudio();
+  // startOrStopAudio();
+	// changePlayButton();
+}
+
+function playPrev() {
+  playNum == 0 ? (playNum = 3) : playNum--;
+	console.log(playNum);
+	playAudio();
+  // startOrStopAudio();
+	// changePlayButton();
+}
+
+btnPlayNext.addEventListener("click", playNext);
+btnPlayPrev.addEventListener("click", playPrev);
+
+
+playBtn.addEventListener('click', startOrStopAudio);
+playBtn.addEventListener('click', changePlayButton);
+
+
+
 
 
 setBg();
