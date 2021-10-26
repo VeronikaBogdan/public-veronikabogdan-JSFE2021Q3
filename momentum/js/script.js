@@ -156,7 +156,7 @@ window.addEventListener("load", getLocalStorageCity);
 
 //! Quote of the Day
 async function getQuotes() {  
-  const quotes = 'data.json';
+  const quotes = 'dataRU.json';
   const res = await fetch(quotes);
   const data = await res.json(); 
 
