@@ -2,15 +2,17 @@
 
 //! Time and calendar
 const timeT = document.querySelector(".time"),
-      dateT = document.querySelector(".date"),
-      greeting = document.querySelector(".greeting"),
-      name = document.querySelector(".name"),
-      slideNext = document.querySelector(".slide-next"),
-      slidePrev = document.querySelector(".slide-prev");
-const weatherIcon = document.querySelector('.weather-icon');
-const temperature = document.querySelector('.temperature');
-const weatherDescription = document.querySelector('.weather-description');
-const city = document.querySelector('.city');
+  dateT = document.querySelector(".date"),
+  greeting = document.querySelector(".greeting"),
+  name = document.querySelector(".name"),
+  slideNext = document.querySelector(".slide-next"),
+  slidePrev = document.querySelector(".slide-prev");
+const weatherIcon = document.querySelector(".weather-icon");
+const temperature = document.querySelector(".temperature");
+const weatherDescription = document.querySelector(".weather-description");
+const wind = document.querySelector(".wind");
+const humidity = document.querySelector(".humidity");
+const city = document.querySelector(".city");
 
 let randomNum;
 
@@ -58,8 +60,6 @@ function showGreeting() {
 
 function setLocalStorage() {
   localStorage.setItem("name", name.value);
-  localStorage.setItem("city", city.value);
-  // city.addEventListener('change', getWeather);
 }
 window.addEventListener("beforeunload", setLocalStorage);
 
@@ -67,14 +67,8 @@ function getLocalStorage() {
   if (localStorage.getItem("name")) {
     name.value = localStorage.getItem("name");
   }
-  if (localStorage.getItem("city")) {
-    city.value = localStorage.getItem("city");
-  }
-  // city.addEventListener('change', getWeather);
 }
 window.addEventListener("load", getLocalStorage);
-
-
 
 //! Slider of images
 randomNum = getRandomNum();
@@ -112,7 +106,6 @@ function getSlidePrev() {
 slideNext.addEventListener("click", getSlideNext);
 slidePrev.addEventListener("click", getSlidePrev);
 
-
 //! Weather widget
 // https://api.openweathermap.org/data/2.5/weather?q=Минск&lang=ru&appid=48cf984e10a9ac711807ab631f98791d&units=metric
 // https://api.openweathermap.org/data/2.5/weather?q=Minsk&lang=ru&appid=48cf984e10a9ac711807ab631f98791d&units=metric
@@ -120,34 +113,40 @@ slidePrev.addEventListener("click", getSlidePrev);
 // https://api.openweathermap.org/data/2.5/weather?q=Минск&lang=en&appid=48cf984e10a9ac711807ab631f98791d&units=metric
 // https://api.openweathermap.org/data/2.5/weather?q=Минск&lang=en&appid=48cf984e10a9ac711807ab631f98791d&units=imperial
 
-async function getWeather() {  
-  // city.value = Moscow;
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=ru&appid=48cf984e10a9ac711807ab631f98791d&units=metric`;
-  const res = await fetch(url);
-  const data = await res.json();
+async function getWeather() {
+  console.log(city.value);
+  if (city.value != "") {
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=en&appid=48cf984e10a9ac711807ab631f98791d&units=metric`;
+    // const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.textContent}&lang=ru&appid=48cf984e10a9ac711807ab631f98791d&units=metric`;
+    const res = await fetch(url);
+    const data = await res.json();
 
-  weatherIcon.className = 'weather-icon owf';
-  weatherIcon.classList.add(`owf-${data.weather[0].id}`);
-  temperature.textContent = `${data.main.temp}°C`;
-  weatherDescription.textContent = data.weather[0].description;
+    weatherIcon.className = "weather-icon owf";
+    weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+    temperature.textContent = `${Math.round(data.main.temp)}°C`;
+    weatherDescription.textContent = data.weather[0].description;
+    wind.textContent = `${Math.round(data.wind.speed)} m/s`;
+    humidity.textContent = `${Math.round(data.main.humidity)} %`;
+  } else {
+    alert("Incorrect city");
+  }
 }
+
+function setLocalStorageCity() {
+  localStorage.setItem("city", city.value);
+}
+
+function getLocalStorageCity() {
+  if (localStorage.getItem("city")) {
+    city.value = localStorage.getItem("city");
+  }
+}
+
 getWeather();
-city.addEventListener('change', getWeather);
+city.addEventListener("change", getWeather);
 
-// function setLocalStorage() {
-//   localStorage.setItem("city", city.value);
-// }
-// window.addEventListener("beforeunload", setLocalStorage);
-
-// function getLocalStorage() {
-//   if (localStorage.getItem("city")) {
-//     name.value = localStorage.getItem("city");
-//   }
-// }
-// window.addEventListener("load", getLocalStorage);
-
-
-
+window.addEventListener("beforeunload", setLocalStorageCity);
+window.addEventListener("load", getLocalStorageCity);
 
 setBg();
 getRandomNum();
