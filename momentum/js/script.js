@@ -23,6 +23,7 @@ const quote = document.querySelector(".quote"),
 const playBtn = document.querySelector('.play');
 const btnPlayNext = document.querySelector('.play-next');
 const btnPlayPrev = document.querySelector('.play-prev');
+const playListContainer = document.querySelector('.play-list');
 
 let randomNum;
 let isPlay = false;
@@ -179,16 +180,26 @@ changeQuote.addEventListener("click", getQuotes);
 //! Audio player
 const audio = new Audio();
 
+// li.textContent = `${playList[0].title}`;
+playList.forEach((el,item) => {
+	const li = document.createElement('li');
+	li.classList.add('play-item');
+	li.textContent = `${el.title}`;
+	playListContainer.append(li);
+})
+
 function playAudio() {
   audio.src = playList[playNum].src;
   audio.currentTime = 0;
   audio.play();
 	isPlay = true;
+	liPlay[playNum].classList.toggle('play-item-main');
 }
 
 function pauseAudio() {
   audio.pause();
 	isPlay = false;
+	liPlay[playNum].classList.toggle('play-item-main');
 }
 
 function startOrStopAudio(){
@@ -199,31 +210,39 @@ function changePlayButton(){
 	!isPlay ? playBtn.classList.remove('pause') : playBtn.classList.add('pause');
 }
 
+const liPlay = document.querySelectorAll('.play-item');
+
 function playNext() {
-  playNum == 3 ? (playNum = 0) : playNum++;
-	console.log(playNum);
+	if(playNum == 3) {
+		playNum = 0;
+		liPlay[3].classList.toggle('play-item-main');
+	} else {
+		playNum++;
+		liPlay[playNum-1].classList.toggle('play-item-main');
+	}
+  // playNum == 3 ? (playNum = 0) : playNum++;
 	playAudio();
-  // startOrStopAudio();
-	// changePlayButton();
+	changePlayButton();
 }
 
 function playPrev() {
-  playNum == 0 ? (playNum = 3) : playNum--;
-	console.log(playNum);
+	if(playNum == 0) {
+		playNum = 3;
+		liPlay[0].classList.toggle('play-item-main');
+	} else {
+		playNum--;
+		liPlay[playNum+1].classList.toggle('play-item-main');
+	}
+  // playNum == 0 ? (playNum = 3) : playNum--;
 	playAudio();
-  // startOrStopAudio();
-	// changePlayButton();
+	changePlayButton();
 }
 
 btnPlayNext.addEventListener("click", playNext);
 btnPlayPrev.addEventListener("click", playPrev);
 
-
 playBtn.addEventListener('click', startOrStopAudio);
 playBtn.addEventListener('click', changePlayButton);
-
-
-
 
 
 setBg();

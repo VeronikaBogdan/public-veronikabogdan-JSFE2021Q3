@@ -53,6 +53,10 @@ body {
   transition: .3s;
 }
 
+.play-item-main {
+	color:coral;
+}
+
 .play-item:hover {
   opacity: 1;
 }
