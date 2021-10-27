@@ -33,7 +33,7 @@ let playNum = 0;
 function showTime() {
   const date = new Date();
 
-  timeT.textContent = date.toLocaleTimeString();
+  timeT.textContent = date.toLocaleTimeString('en-US', { hour12: false });
   setTimeout(showTime, 1000);
 
   showDate();
@@ -109,16 +109,69 @@ function setBg() {
 
 function getSlideNext() {
   randomNum == 20 ? (randomNum = 1) : randomNum++;
-  setBg();
+  // setBg();
+	getLinkToImage(); 
+	// getLinkToImageFlickr();
 }
 
 function getSlidePrev() {
   randomNum == 1 ? (randomNum = 20) : randomNum--;
-  setBg();
+  // setBg();
+	getLinkToImage();
+	// getLinkToImageFlickr(); 
 }
 
 slideNext.addEventListener("click", getSlideNext);
 slidePrev.addEventListener("click", getSlidePrev);
+
+//! Unsplash API
+
+// https://api.unsplash.com/photos/random?orientation=landscape&query=nature&client_id=_Rd2kPJVC2tVj9uKSeCv6gK4JjxwUFoAwWR7csOXJJI
+
+// function getLinkToImage() {
+// 	const url = 'https://api.unsplash.com/photos/random?orientation=landscape&query=nature&client_id=_Rd2kPJVC2tVj9uKSeCv6gK4JjxwUFoAwWR7csOXJJI';
+// 	fetch(url)
+// 		.then(res => res.json())
+// 		.then(data => {
+// 			console.log(data.urls.regular)
+// 		});
+// }
+async function getLinkToImage() {
+	const url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${getTimeOfDay()}&client_id=_Rd2kPJVC2tVj9uKSeCv6gK4JjxwUFoAwWR7csOXJJI`;	
+	const res = await fetch(url);
+	const data = await res.json();
+
+	console.log(data.urls.regular)
+
+  const img = new Image();
+  img.src = data.urls.regular;
+  img.onload = () => {
+    document.body.style.backgroundImage = `url('${data.urls.regular}')`;
+  };
+}
+
+async function getLinkToImageFlickr() {
+	const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=f850a6092602144d18ae547b899e272e&tags=nature&extras=url_l&format=json&nojsoncallback=1`;	
+	// const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=f850a6092602144d18ae547b899e272e&tags=${getTimeOfDay()}&extras=url_l&format=json&nojsoncallback=1`;	
+	const res = await fetch(url);
+	const data = await res.json();
+
+	console.log(data.photos.photo[randomNum].url_l)
+
+  const img = new Image();
+  img.src = data.photos.photo[randomNum].url_l;
+  img.onload = () => {
+    document.body.style.backgroundImage = `url('${data.photos.photo[randomNum].url_l}')`;
+  };
+}
+
+
+// setBg();
+getLinkToImage(); 
+// getLinkToImageFlickr(); 
+
+
+
 
 //! Weather widget
 // https://api.openweathermap.org/data/2.5/weather?q=Минск&lang=ru&appid=48cf984e10a9ac711807ab631f98791d&units=metric
@@ -140,8 +193,8 @@ async function getWeather() {
     weatherIcon.classList.add(`owf-${data.weather[0].id}`);
     temperature.textContent = `${Math.round(data.main.temp)}°C`;
     weatherDescription.textContent = data.weather[0].description;
-    wind.textContent = `${Math.round(data.wind.speed)} m/s`;
-    humidity.textContent = `${Math.round(data.main.humidity)} %`;
+    wind.textContent = `Wind speed: ${Math.round(data.wind.speed)} m/s`;
+    humidity.textContent = `Humidity: ${Math.round(data.main.humidity)} %`;
   }
 }
 
@@ -266,8 +319,5 @@ const audioPlayer = document.querySelector(".audio-player");
 
 
 
-
-
-setBg();
 getRandomNum();
 showTime();
