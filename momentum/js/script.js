@@ -128,20 +128,20 @@ slidePrev.addEventListener("click", getSlidePrev);
 // https://api.openweathermap.org/data/2.5/weather?q=Минск&lang=en&appid=48cf984e10a9ac711807ab631f98791d&units=imperial
 
 async function getWeather() {
-  if (city.value != "") {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=en&appid=48cf984e10a9ac711807ab631f98791d&units=metric`;
-    // const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.textContent}&lang=ru&appid=48cf984e10a9ac711807ab631f98791d&units=metric`;
-    const res = await fetch(url);
-    const data = await res.json();
+	const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=en&appid=48cf984e10a9ac711807ab631f98791d&units=metric`;
+	// const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.textContent}&lang=ru&appid=48cf984e10a9ac711807ab631f98791d&units=metric`;
+	const res = await fetch(url);
+	const data = await res.json();
 
+	if(data.cod == '400' || data.cod == '404'){
+		alert('Incorrect data... Error.');
+	} else 	{
     weatherIcon.className = "weather-icon owf";
     weatherIcon.classList.add(`owf-${data.weather[0].id}`);
     temperature.textContent = `${Math.round(data.main.temp)}°C`;
     weatherDescription.textContent = data.weather[0].description;
     wind.textContent = `${Math.round(data.wind.speed)} m/s`;
     humidity.textContent = `${Math.round(data.main.humidity)} %`;
-  } else {
-    alert("Incorrect city");
   }
 }
 
@@ -192,9 +192,17 @@ function playAudio() {
   audio.src = playList[playNum].src;
   audio.currentTime = 0;
   audio.play();
+	audio.classList.add('song');
 	isPlay = true;
+	console.log(audio);
 	liPlay[playNum].classList.toggle('play-item-main');
+
+	// automatically play the next song at the end of the audio object's duration
+	audio.addEventListener('ended', function(){
+		playNext();
+	});
 }
+
 
 function pauseAudio() {
   audio.pause();
@@ -223,6 +231,12 @@ function playNext() {
   // playNum == 3 ? (playNum = 0) : playNum++;
 	playAudio();
 	changePlayButton();
+
+	// automatically play the next song at the end of the audio object's duration
+	// audio.addEventListener('ended', function(){
+	// 	playNext();
+	// });
+	
 }
 
 function playPrev() {
@@ -243,6 +257,15 @@ btnPlayPrev.addEventListener("click", playPrev);
 
 playBtn.addEventListener('click', startOrStopAudio);
 playBtn.addEventListener('click', changePlayButton);
+
+console.log(audio);
+
+
+
+const audioPlayer = document.querySelector(".audio-player");
+
+
+
 
 
 setBg();
