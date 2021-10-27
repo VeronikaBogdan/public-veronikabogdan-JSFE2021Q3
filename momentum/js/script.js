@@ -25,9 +25,12 @@ const btnPlayNext = document.querySelector('.play-next');
 const btnPlayPrev = document.querySelector('.play-prev');
 const playListContainer = document.querySelector('.play-list');
 
+const settings = document.querySelector('.settings');
+
 let randomNum;
 let isPlay = false;
 let playNum = 0;
+let lang = 'ru';
 
 //! Time and calendar
 function showTime() {
@@ -48,8 +51,10 @@ function showDate() {
     day: "numeric" /*, hour: 'numeric', minute: 'numeric'*/,
   };
 
+		// dateT.textContent = l == 'en' ? date.toLocaleDateString("en", options) : date.toLocaleDateString("ru", options);
   // dateT.textContent = date.toLocaleDateString('ru-RU', options);
-  dateT.textContent = date.toLocaleDateString("en-Br", options);
+  // dateT.textContent = date.toLocaleDateString(['en','ru'], options);
+  dateT.textContent = date.toLocaleDateString(lang, options);
   setTimeout(showDate, 1000);
 }
 
@@ -65,11 +70,27 @@ const getTimeOfDay = () => {
   return timeOfDay[~~(getHours() / 6)];
 };
 
-function showGreeting() {
-  // const timeOfDay = getTimeOfDay();
-  const greetingText = `Good ${getTimeOfDay()}`;
+const greetingTranslation = {
+	// 'ru': `Добрый вечер`,
+	'ru': [
+		'Доброй ночи',
+		'Доброе утро',
+		'Добрый день',
+		'Добрый вечер'
+	],
 
-  greeting.textContent = greetingText;
+	'en': `Good ${getTimeOfDay()}`
+};
+
+function showGreeting() {
+	greeting.textContent = lang == 'en' ? greetingTranslation.en : greetingTranslation.ru[~~(getHours() / 6)];
+	if(lang == 'ru') name.placeholder = 'Введите имя';
+	// if(language == 'en')
+	//  {
+	// 	const greetingText = `Good ${getTimeOfDay()}`;
+	// 	// greeting.textContent = `Good ${getTimeOfDay()}`;
+	// 	greeting.textContent = greetingTranslation.en;
+	// } else greeting.textContent = greetingTranslation.ru[~~(getHours() / 6)];
 }
 
 function setLocalStorage() {
@@ -83,6 +104,8 @@ function getLocalStorage() {
   }
 }
 window.addEventListener("load", getLocalStorage);
+
+
 
 //! Slider of images
 randomNum = getRandomNum();
@@ -104,25 +127,29 @@ function setBg() {
     document.body.style.backgroundImage = `url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${getTimeOfDay()}/${bgNum}.jpg')`;
   };
 
-  // document.body.style.backgroundImage = `url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${getTimeOfDay()}/${bgNum}.jpg')`;
 }
 
 function getSlideNext() {
   randomNum == 20 ? (randomNum = 1) : randomNum++;
   // setBg();
-	getLinkToImage(); 
-	// getLinkToImageFlickr();
+	// getLinkToImage(); 
+	getLinkToImageFlickr();
 }
 
 function getSlidePrev() {
   randomNum == 1 ? (randomNum = 20) : randomNum--;
   // setBg();
-	getLinkToImage();
-	// getLinkToImageFlickr(); 
+	// getLinkToImage();
+	getLinkToImageFlickr(); 
 }
 
 slideNext.addEventListener("click", getSlideNext);
 slidePrev.addEventListener("click", getSlidePrev);
+
+
+
+
+
 
 //! Unsplash API
 
@@ -167,8 +194,8 @@ async function getLinkToImageFlickr() {
 
 
 // setBg();
-getLinkToImage(); 
-// getLinkToImageFlickr(); 
+// getLinkToImage(); 
+getLinkToImageFlickr(); 
 
 
 
@@ -181,7 +208,8 @@ getLinkToImage();
 // https://api.openweathermap.org/data/2.5/weather?q=Минск&lang=en&appid=48cf984e10a9ac711807ab631f98791d&units=imperial
 
 async function getWeather() {
-	const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=en&appid=48cf984e10a9ac711807ab631f98791d&units=metric`;
+	if (lang == 'ru') city.value == 'Минск';
+	const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=${lang}&appid=48cf984e10a9ac711807ab631f98791d&units=metric`;
 	// const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.textContent}&lang=ru&appid=48cf984e10a9ac711807ab631f98791d&units=metric`;
 	const res = await fetch(url);
 	const data = await res.json();
@@ -193,8 +221,13 @@ async function getWeather() {
     weatherIcon.classList.add(`owf-${data.weather[0].id}`);
     temperature.textContent = `${Math.round(data.main.temp)}°C`;
     weatherDescription.textContent = data.weather[0].description;
-    wind.textContent = `Wind speed: ${Math.round(data.wind.speed)} m/s`;
-    humidity.textContent = `Humidity: ${Math.round(data.main.humidity)} %`;
+		if(lang == 'en') {
+			wind.textContent = `Wind speed: ${Math.round(data.wind.speed)} m/s`;
+			humidity.textContent = `Humidity: ${Math.round(data.main.humidity)} %`;
+		} else {
+			wind.textContent = `Скорость ветра: ${Math.round(data.wind.speed)} м/с`;
+			humidity.textContent = `Влажность: ${Math.round(data.main.humidity)} %`;
+		}
   }
 }
 
@@ -216,8 +249,9 @@ window.addEventListener("load", getLocalStorageCity);
 
 
 //! Quote of the Day
-async function getQuotes() {  
-  const quotes = 'dataEN.json';
+async function getQuotes() { 
+	const quotes = lang == 'en' ? 'dataEN.json' : 'dataRU.json';
+  // const quotes = 'dataEN.json';
   const res = await fetch(quotes);
   const data = await res.json(); 
 
@@ -249,12 +283,19 @@ function playAudio() {
 	isPlay = true;
 	console.log(audio);
 	liPlay[playNum].classList.toggle('play-item-main');
+}
+
 
 	// automatically play the next song at the end of the audio object's duration
 	audio.addEventListener('ended', function(){
-		playNext();
+		if(playNum == 3) {
+			playNum = 0;
+			liPlay[3].classList.toggle('play-item-main');
+		} else {
+			playNum++;
+			liPlay[playNum-1].classList.toggle('play-item-main');
+		}
 	});
-}
 
 
 function pauseAudio() {
@@ -276,29 +317,23 @@ const liPlay = document.querySelectorAll('.play-item');
 function playNext() {
 	if(playNum == 3) {
 		playNum = 0;
-		liPlay[3].classList.toggle('play-item-main');
+		liPlay[3].classList.remove('play-item-main');
 	} else {
 		playNum++;
-		liPlay[playNum-1].classList.toggle('play-item-main');
+		liPlay[playNum-1].classList.remove('play-item-main');
 	}
   // playNum == 3 ? (playNum = 0) : playNum++;
 	playAudio();
-	changePlayButton();
-
-	// automatically play the next song at the end of the audio object's duration
-	// audio.addEventListener('ended', function(){
-	// 	playNext();
-	// });
-	
+	changePlayButton();	
 }
 
 function playPrev() {
 	if(playNum == 0) {
 		playNum = 3;
-		liPlay[0].classList.toggle('play-item-main');
+		liPlay[0].classList.remove('play-item-main');
 	} else {
 		playNum--;
-		liPlay[playNum+1].classList.toggle('play-item-main');
+		liPlay[playNum+1].classList.remove('play-item-main');
 	}
   // playNum == 0 ? (playNum = 3) : playNum--;
 	playAudio();
@@ -316,6 +351,15 @@ console.log(audio);
 
 
 const audioPlayer = document.querySelector(".audio-player");
+
+
+//! Seetings
+settings.addEventListener('click', () => {
+	lang == 'en' ? lang = 'ru' : lang = 'en';
+	getQuotes();
+	getWeather();
+});
+
 
 
 

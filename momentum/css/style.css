@@ -289,7 +289,9 @@ body {
   }
 }
 
-
+.settings {
+	cursor: pointer;
+}
 
 
 /* 
