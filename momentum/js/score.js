@@ -2,7 +2,7 @@ console.log(
 	`Здравстуйте! Можно Вас попросить: можете пока что не проверять работу (во вторник хотя бы;но это уже по Вашему усмотрению), 
 т.к. не успеваю сделать и не очень хочется получать низкий балл и доставлять Вам неудобства, прося о перепроверке... 
 Заранее благодарна) Хорошего Вам дня!
-	Score: 85 / 150`,
+	Score: 95 / 150`,
 	`
 	1. Часы и календарь +15
 	2. Приветствие +10
@@ -18,10 +18,9 @@ console.log(
 		// setBg();  -- функция изображений из gh
 		getLinkToImage();  -- функция изображений из Unsplash API
 		// getLinkToImageFlickr(); ))-- функция изображений из Flickr API
-
+		
 	`
 );
 // const e=["font-size: 30px; color: rgb(2, 120, 151); text-decoration: underline;","font-size: 14px; color: rgb(2, 120, 151);","font-size: 14px; color: #fff; background-color: #8AB4F8; border-radius: 35%; padding: 2px;","font-size: 12px; color: rgb(2, 120, 151);"];console.log("%cСамооценка",e[0])
-
 
 
