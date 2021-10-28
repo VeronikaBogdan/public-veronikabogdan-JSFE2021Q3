@@ -31,6 +31,11 @@ body {
   padding: 20px;
 }
 
+.player {
+	opacity: 1;
+	transition: opacity 0.5s ease-in;
+}
+
 .player-controls {
   display: flex;
   align-items: center;
@@ -134,6 +139,8 @@ body {
   width: 180px;
   min-height: 180px;  
   text-align: left;
+	opacity: 1;
+	transition: opacity 0.5s ease-in;
 }
 
 .weather-error {
@@ -206,14 +213,17 @@ body {
   font-family: 'Arial-MT';
   font-size: 100px;
   letter-spacing: -4px;  
+	opacity: 1;
+	transition: opacity 0.5s ease-in;
 }
 
 .date {
   min-height: 28px;
   font-size: 24px;
   margin-bottom: 20px;
+	opacity: 1;
+	transition: opacity 0.5s ease-in;
 }
-
 .greeting-container {
   display: flex;
   flex-wrap: wrap;
@@ -222,12 +232,15 @@ body {
   min-height: 48px;
   width: 100vw;
   font-size: 40px;
+	opacity: 1;
+	transition: opacity 0.5s ease-in;
 }
 
 .greeting {
   flex: 1;  
   padding: 10px;
   text-align: right;
+	
 }
 
 .name {
@@ -265,10 +278,15 @@ body {
 
 .quote {
   min-height: 32px;
+	opacity: 1;
+	transition: opacity 0.5s ease-in;
 }
+
 
 .author {
   min-height: 20px;
+	opacity: 1;
+	transition: opacity 0.5s ease-in;
 }
 
 .settings-wrapper {
@@ -300,8 +318,10 @@ body {
 	display: block;
 }
 .close {
-	display: none;
-	transition: all 2s;
+	opacity: 0;
+}
+.close::placeholder {
+	opacity: 0;
 }
 .settings-item {
 	font-size: 20px;
@@ -311,15 +331,28 @@ body {
 }
 
 .settings-item input[type=button] {
+	width: 70px;
+	height: 30px;
 	font-size: 15px;
 	border: 0;
+	border-radius: 50%;
 	padding: 5px;
 	background-color: inherit;
 	cursor: pointer;
 	transition: all 0.5s linear;
+	background-color: #fff;
 }
+
+.settings-item input[type=button]:hover {
+	background-color: #60d6af;
+}
+
 .settings-item input[type=button]:active {
-	background-color: #33ce24;
+	background-color: #2ac41c;
+}
+
+.btn-color {
+	background-color: #cec324;
 }
 
 

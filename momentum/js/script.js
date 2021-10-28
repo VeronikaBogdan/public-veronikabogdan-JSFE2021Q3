@@ -5,10 +5,12 @@ import playList from './playList.js';
 const timeT = document.querySelector(".time"),
 			dateT = document.querySelector(".date"),
 			greeting = document.querySelector(".greeting"),
+			greetingContainer = document.querySelector(".greeting-container"),
 			name = document.querySelector(".name"),
 			slideNext = document.querySelector(".slide-next"),
 			slidePrev = document.querySelector(".slide-prev");
 
+const weather = document.querySelector(".weather");
 const weatherIcon = document.querySelector(".weather-icon");
 const temperature = document.querySelector(".temperature");
 const weatherDescription = document.querySelector(".weather-description");
@@ -20,6 +22,7 @@ const quote = document.querySelector(".quote"),
 		  author = document.querySelector(".author"),
 		  changeQuote = document.querySelector(".change-quote");
 
+const player = document.querySelector('.player');
 const playBtn = document.querySelector('.play');
 const btnPlayNext = document.querySelector('.play-next');
 const btnPlayPrev = document.querySelector('.play-prev');
@@ -28,8 +31,13 @@ const playListContainer = document.querySelector('.play-list');
 const settingsIcon = document.querySelector('.settings-icon');
 const settings = document.querySelector('.settings');
 const languageItem = document.querySelector('.language-item');
-const langEn = document.querySelector('#l1');
-const langRu = document.querySelector('#l2');
+const dateItem = document.querySelector('.date-item');
+const timeItem = document.querySelector('.time-item');
+const greentingItem = document.querySelector('.greenting-item');
+const quoteItem = document.querySelector('.quote-item');
+const weatherItem = document.querySelector('.weather-item');
+const audioItem = document.querySelector('.audio-item');
+
 
 let randomNum;
 let isPlay = false;
@@ -356,15 +364,37 @@ const audioPlayer = document.querySelector(".audio-player");
 
 
 //! Seetings
+settingsIcon.addEventListener('click', () => {
+	settings.classList.toggle('settings-open');
+	settingsIcon.classList.toggle('settings-icon-close');
+});
+
 languageItem.addEventListener('click', () => {
 	lang == 'en' ? lang = 'ru' : lang = 'en';
 	name.placeholder = lang == 'ru' ? '[Введите имя]' : '[Input name]' ;
 	getQuotes();
 	getWeather();
 });
-settingsIcon.addEventListener('click', () => {
-	settings.classList.toggle('settings-open');
-	settingsIcon.classList.toggle('settings-icon-close');
+
+dateItem.addEventListener('click', () => {
+	dateT.classList.toggle('close');
+	// dateItem.classList.toggle('btn-color');
+});
+timeItem.addEventListener('click', () => {
+	timeT.classList.toggle('close');
+});
+greentingItem.addEventListener('click', () => {
+	greetingContainer.classList.toggle('close');
+});
+quoteItem.addEventListener('click', () => {
+	quote.classList.toggle('close');
+	author.classList.toggle('close');
+});
+weatherItem.addEventListener('click', () => {
+	weather.classList.toggle('close');
+});
+audioItem.addEventListener('click', () => {
+	player.classList.toggle('close');
 });
 
 
