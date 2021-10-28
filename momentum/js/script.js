@@ -30,7 +30,7 @@ const settings = document.querySelector('.settings');
 let randomNum;
 let isPlay = false;
 let playNum = 0;
-let lang = 'ru';
+let lang = 'en';
 
 //! Time and calendar
 function showTime() {
@@ -84,7 +84,6 @@ const greetingTranslation = {
 
 function showGreeting() {
 	greeting.textContent = lang == 'en' ? greetingTranslation.en : greetingTranslation.ru[~~(getHours() / 6)];
-	if(lang == 'ru') name.placeholder = 'Введите имя';
 	// if(language == 'en')
 	//  {
 	// 	const greetingText = `Good ${getTimeOfDay()}`;
@@ -356,6 +355,7 @@ const audioPlayer = document.querySelector(".audio-player");
 //! Seetings
 settings.addEventListener('click', () => {
 	lang == 'en' ? lang = 'ru' : lang = 'en';
+	name.placeholder = lang == 'ru' ? '[Введите имя]' : '[Input name]' ;
 	getQuotes();
 	getWeather();
 });
