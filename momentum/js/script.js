@@ -38,6 +38,9 @@ const quoteItem = document.querySelector('.quote-item');
 const weatherItem = document.querySelector('.weather-item');
 const audioItem = document.querySelector('.audio-item');
 
+const ghItem = document.querySelector('.gh-item');
+const unsplashItem = document.querySelector('.unsplash-item');
+const flickrItem = document.querySelector('.flickr-item');
 
 let randomNum;
 let isPlay = false;
@@ -140,18 +143,44 @@ function setBg() {
 
 }
 
+let sun = 1;
+
+ghItem.addEventListener('click', () => {
+	setBg();
+	sun = 1;
+	// console.log(ghItem.classList.contains('play-item-main'));
+	ghItem.classList.add('play-item-main');
+	unsplashItem.classList.remove('play-item-main');
+	flickrItem.classList.remove('play-item-main');
+});
+unsplashItem.addEventListener('click', () => {
+	getLinkToImage();
+	sun = 2;
+
+	ghItem.classList.remove('play-item-main');
+	unsplashItem.classList.add('play-item-main');
+	flickrItem.classList.remove('play-item-main');
+});
+flickrItem.addEventListener('click', () => {
+	getLinkToImageFlickr(); 
+	sun = 3;	
+
+	ghItem.classList.remove('play-item-main');
+	unsplashItem.classList.remove('play-item-main');
+	flickrItem.classList.add('play-item-main');
+});
+
 function getSlideNext() {
   randomNum == 20 ? (randomNum = 1) : randomNum++;
-  // setBg();
-	// getLinkToImage(); 
-	getLinkToImageFlickr();
+
+	sun == 1 ? setBg() : 
+	sun == 2 ? getLinkToImage() : getLinkToImageFlickr();
 }
 
 function getSlidePrev() {
   randomNum == 1 ? (randomNum = 20) : randomNum--;
-  // setBg();
-	// getLinkToImage();
-	getLinkToImageFlickr(); 
+	sun == 1 ? setBg() : 
+	sun == 2 ? getLinkToImage() : getLinkToImageFlickr();
 }
 
 slideNext.addEventListener("click", getSlideNext);
@@ -188,6 +217,8 @@ async function getLinkToImage() {
   };
 }
 
+//! Flickr API
+
 async function getLinkToImageFlickr() {
 	const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=f850a6092602144d18ae547b899e272e&tags=nature&extras=url_l&format=json&nojsoncallback=1`;	
 	// const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=f850a6092602144d18ae547b899e272e&tags=${getTimeOfDay()}&extras=url_l&format=json&nojsoncallback=1`;	
@@ -203,11 +234,10 @@ async function getLinkToImageFlickr() {
   };
 }
 
-
-// setBg();
+ghItem.classList.add('play-item-main');
+setBg();
 // getLinkToImage(); 
-getLinkToImageFlickr(); 
-
+// getLinkToImageFlickr(); 
 
 
 
@@ -369,7 +399,7 @@ settingsIcon.addEventListener('click', () => {
 	settingsIcon.classList.toggle('settings-icon-close');
 });
 
-languageItem.addEventListener('click', () => {
+languageItem.addEventListener('click', (elem) => {
 	lang == 'en' ? lang = 'ru' : lang = 'en';
 	name.placeholder = lang == 'ru' ? '[Введите имя]' : '[Input name]' ;
 	getQuotes();
@@ -396,9 +426,6 @@ weatherItem.addEventListener('click', () => {
 audioItem.addEventListener('click', () => {
 	player.classList.toggle('close');
 });
-
-
-
 
 getRandomNum();
 showTime();
