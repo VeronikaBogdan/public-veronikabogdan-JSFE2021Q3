@@ -76,7 +76,7 @@ body {
 .player-icon,
 .slider-icon,
 .change-quote,
-.settings {
+.settings-icon {
   width: 32px;
   height: 32px;
   background-size: 32px 32px;
@@ -93,14 +93,14 @@ body {
 .player-icon:hover,
 .slider-icon:hover,
 .change-quote:hover,
-.settings:hover {
+.settings-icon:hover {
   opacity: 1;
 }
 
 .player-icon:active,
 .slider-icon:active,
 .change-quote:active,
-.settings:active {
+.settings-icon:active {
   border: 0;
   outline: 0;  
   transform: scale(1.1);
@@ -271,9 +271,57 @@ body {
   min-height: 20px;
 }
 
-.settings {
+.settings-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+}
+.settings-icon {
+	margin-bottom: 30px;
 	background-image: url("../assets/svg/tune_settings.svg");  
 }
+.settings-icon-close {
+	/* margin-bottom: 30px; */
+	background-image: url("../assets/svg/close.svg");  
+}
+.settings > ul {
+	list-style: none;
+}
+.settings {
+	display: none;
+	width: 400px;
+	background-color: #e0d6d6;
+	color: black;
+	z-index: 3;
+	padding: 10px;
+	transition: all 2s;
+}
+.settings-open {
+	display: block;
+}
+.close {
+	display: none;
+	transition: all 2s;
+}
+.settings-item {
+	font-size: 20px;
+	padding: 7px;
+	display: flex;
+	justify-content:space-between;
+}
+
+.settings-item input[type=button] {
+	font-size: 15px;
+	border: 0;
+	padding: 5px;
+	background-color: inherit;
+	cursor: pointer;
+	transition: all 0.5s linear;
+}
+.settings-item input[type=button]:active {
+	background-color: #33ce24;
+}
+
 
 @media (max-width: 768px) {
   .time {

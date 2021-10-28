@@ -25,7 +25,11 @@ const btnPlayNext = document.querySelector('.play-next');
 const btnPlayPrev = document.querySelector('.play-prev');
 const playListContainer = document.querySelector('.play-list');
 
+const settingsIcon = document.querySelector('.settings-icon');
 const settings = document.querySelector('.settings');
+const languageItem = document.querySelector('.language-item');
+const langEn = document.querySelector('#l1');
+const langRu = document.querySelector('#l2');
 
 let randomNum;
 let isPlay = false;
@@ -280,7 +284,6 @@ function playAudio() {
   audio.play();
 	audio.classList.add('song');
 	isPlay = true;
-	console.log(audio);
 	liPlay[playNum].classList.toggle('play-item-main');
 }
 
@@ -353,11 +356,15 @@ const audioPlayer = document.querySelector(".audio-player");
 
 
 //! Seetings
-settings.addEventListener('click', () => {
+languageItem.addEventListener('click', () => {
 	lang == 'en' ? lang = 'ru' : lang = 'en';
 	name.placeholder = lang == 'ru' ? '[Введите имя]' : '[Input name]' ;
 	getQuotes();
 	getWeather();
+});
+settingsIcon.addEventListener('click', () => {
+	settings.classList.toggle('settings-open');
+	settingsIcon.classList.toggle('settings-icon-close');
 });
 
 
