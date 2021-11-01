@@ -277,7 +277,6 @@ window.addEventListener("load", getLocalStorageCity);
 //! Quote of the Day
 async function getQuotes() {
   const quotes = lang == "en" ? "dataEN.json" : "dataRU.json";
-  // const quotes = 'dataEN.json';
   const res = await fetch(quotes);
   const data = await res.json();
 
@@ -369,9 +368,6 @@ btnPlayPrev.addEventListener("click", playPrev);
 playBtn.addEventListener("click", startOrStopAudio);
 playBtn.addEventListener("click", changePlayButton);
 
-console.log(audio);
-
-const audioPlayer = document.querySelector(".audio-player");
 
 //! Seetings
 settingsIcon.addEventListener("click", () => {
@@ -390,8 +386,6 @@ const audioI = document.querySelector('.audio-i');
 
 
 languageItem.addEventListener("click", () => {
-  // lang == "en" ? (lang = "ru") : (lang = "en");
-  // name.placeholder = lang == "ru" ? "[Введите имя]" : "[Input name]";
   if(lang == 'en') {
     lang = "ru"
     name.placeholder = "[Введите имя]";
