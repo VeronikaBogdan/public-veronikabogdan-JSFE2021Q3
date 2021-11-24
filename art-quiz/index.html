@@ -27,11 +27,31 @@
 						<figcaption><strong>pictures</strong> quiz</figcaption>
 					</figure>
 				</div>
-        <button class="button settings">settings</button>
+        <button class="button settings-btn"><img src="assets/svg/Settings.svg" alt="photo: settings"> settings</button>
 			</div>
 
-      <div class="settings">
-
+      <div class="settings hide">
+        <p>settings</p>
+        <div class="settings-group">
+          <div class="settings__sound">
+            <img src="assets/svg/Volume.svg" width="100" alt="photo: Volume">
+            <p>
+              <strong>volume</strong>
+            </p>
+          </div>
+          <div class="settings__timer">
+            <img src="assets/svg/TimeGame.svg" width="75" alt="photo: time game">
+            <input type="checkbox" id="scales" class="custom-checkbox" name="on-off"> <!-- checked -->
+            <label for="on-off">on / off</label>
+            <p>
+              <strong>time game</strong>
+            </p>
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="button save-btn">save</button>
+          <button class="button defaults-btn">defaults</button>
+        </div>
       </div>
 
       <div class="categories">
