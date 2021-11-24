@@ -24,6 +24,7 @@
 :root {
   --head: 36px;
   --font2: 24px;
+  --font3: 18px;
   --color-dp: #660033;
   --color-wh: #fff;
   --color-gr: #555;
@@ -35,7 +36,7 @@ html {
   color: var(--color-dp) ;
 }
 .container {
-  max-width: 1440px;
+  max-width: calc(100% - 50px);
   margin: 0 auto;
 }
 .main-logo {
@@ -47,7 +48,10 @@ html {
 }
 
 .main-screen {
-  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0;
+  text-transform: uppercase;
 }
 
 .game-variations {
@@ -55,7 +59,6 @@ html {
   justify-content: space-around;
 }
 .game-variation {
-  text-transform: uppercase;
   box-shadow: 0;
   transition: all 0.3s linear;
 }
@@ -66,6 +69,24 @@ html {
 .game-variation figcaption {
   text-align: right;
   font-size: var(--head);
+}
+.button{
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  border: 0;
+  background-color: var(--color-dp);
+  color: var(--color-wh);
+  font-size: var(--font3);
+  text-transform: uppercase;
+  box-shadow: 0;
+  transition: box-shadow 0.3s ease-in;
+}
+.button:active {
+  background-color: #520331;
+}
+.button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 25px 5px #c22c8960;
 }
 
 .footer {
@@ -80,4 +101,9 @@ html {
 }
 .hide {
   display: none;
+}
+
+
+@media (max-width: 1024px) {
+
 }
