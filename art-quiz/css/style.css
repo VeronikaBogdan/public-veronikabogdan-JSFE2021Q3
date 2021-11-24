@@ -1,0 +1,83 @@
+@font-face {
+	font-family: Black; 
+	src: url('../assets/fonts/Montserrat-Bold.ttf');
+}
+@font-face {
+	font-family: SemiBold; 
+	src: url('../assets/fonts/Montserrat-SemiBold.ttf');
+}
+@font-face {
+	font-family: Regular;
+	src: url('../assets/fonts/Montserrat-Regular.ttf');
+}
+@font-face {
+	font-family: Medium;
+	src: url('../assets/fonts/Montserrat-Medium.ttf');
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  --head: 36px;
+  --font2: 24px;
+  --color-dp: #660033;
+  --color-wh: #fff;
+  --color-gr: #555;
+}
+
+html {
+  background-color: #e5faf8;
+  font-family: Regular;
+  color: var(--color-dp) ;
+}
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.main-logo {
+  margin: 50px auto 0 auto;
+}
+.main-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-screen {
+  margin: 50px 0;
+}
+
+.game-variations {
+  display: flex;
+  justify-content: space-around;
+}
+.game-variation {
+  text-transform: uppercase;
+  box-shadow: 0;
+  transition: all 0.3s linear;
+}
+.game-variation:hover {
+ cursor: pointer;
+ box-shadow: 0 0 30px 20px #01018833;
+}
+.game-variation figcaption {
+  text-align: right;
+  font-size: var(--head);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font2);
+}
+
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
