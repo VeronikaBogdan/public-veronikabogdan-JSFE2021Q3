@@ -38,3 +38,45 @@ homeBtn.addEventListener('click', event => {
 	categories.classList.add('hide');
 })
 
+//! 
+
+
+function getRandomNum(min, max) {
+  min = Math.ceil(min);
+  max = Math.ceil(max);
+  return Math.round(Math.random() * (max - min)) + min;
+}
+
+console.log(getRandomNum(0, 9));
+
+
+
+
+// const genres = ['portrait', 'landscape', 'still life'];
+
+
+
+// const cat = document.querySelector('.cat');
+// const ul = document.createElement("ul");
+// const li = document.createElement("li"); 
+// ul.classList.add('categories__list');
+// li.classList.add('categories__item');
+
+// cat.append(ul);
+// // ul.append(li);
+
+// genres.forEach((item, i, arr) => {
+//   console.log(item);
+//   console.log(li);
+//   li.innerHTML = `
+//   <div class="numbers">
+//     <p class="number">${i+1}</p>
+//     <p class="item_score"></p>
+//   </div>
+//   <p>${item.toUpperCase()}</p>
+//   <img class="category__img" src="assets/img/${i}.jpg" alt="photo: ${item}">
+//   `
+//   ul.append(li);
+//   console.log(li);
+// });
+
