@@ -1,0 +1,93 @@
+* {
+	padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  color: #fff;
+}
+
+html {
+  font-family: 'Neucha', cursive;
+  /* font-family: 'Roboto', sans-serif; */
+  background: center/120%  url('./assets/bg.jpg');
+  font-size: 10px;
+}
+
+/* .container {
+  width: 130rem;
+  margin: 0 auto;
+} */
+
+.header {
+  position: relative;
+  background-color: #121C1E;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  font-size: 3.5rem;
+  padding: 10px;
+}
+
+nav, 
+.search {
+  display: flex;
+  align-items:center;
+}
+
+nav > p,
+.logo-tree {
+  padding: 0.8rem;
+}
+
+nav > p:hover,
+.logo-tree:hover {
+  padding: 0.8rem;
+}
+
+.logo-tree, 
+.ball {
+  width: 48px;
+  height: 60px;
+}
+
+.logo-tree {
+  background: no-repeat center/60%  url('./assets/svg/tree.svg');
+}
+
+.main-screen {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  align-items: center;
+  /* height: 700px; */
+  align-content: center;
+}
+
+.main-screen > h1 {
+  width: 423px;
+  align-self: center;
+  text-align: center;
+  padding: 66px 85px;
+  margin-top: 15rem;
+  font-size: 5.3rem;
+  line-height: 5.8rem;
+  text-transform: uppercase;
+  border-radius: 15%;
+  border: #2299EB 2px solid;
+  background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(36, 197, 219, 0.15) 0%, rgba(36, 197, 219, 0) 100%);
+  backdrop-filter: blur(31px);
+  border-radius: 30px;
+}
+
+.main-screen > button {
+  padding: 12px 119px;
+  background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(36, 197, 219, 0.15) 0%, rgba(36, 197, 219, 0) 100%);
+  backdrop-filter: blur(31px);
+  border-radius: 30px;
+  border: 3px solid #2299EB;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.4rem;
+  line-height: 2.9rem;
+  text-align: center;
+  margin-top: 11.5rem;
+}
