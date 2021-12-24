@@ -13,10 +13,11 @@ html {
   font-size: 10px;
 }
 
-/* .container {
-  width: 130rem;
-  margin: 0 auto;
-} */
+:root {
+  --h1: 5.3rem;
+  --f1: 3.5rem;
+  --f2: 2.4rem;
+}
 
 .header {
   position: relative;
@@ -24,7 +25,7 @@ html {
   z-index: 10;
   display: flex;
   justify-content: space-between;
-  font-size: 3.5rem;
+  font-size: var(--f1);
   padding: 10px;
 }
 
@@ -37,11 +38,13 @@ nav,
 nav > p,
 .logo-tree {
   padding: 0.8rem;
+  transition: all 0.3s ease;
 }
 
 nav > p:hover,
 .logo-tree:hover {
-  padding: 0.8rem;
+  color: #2299EB;
+  cursor: pointer;
 }
 
 .logo-tree, 
@@ -54,12 +57,14 @@ nav > p:hover,
   background: no-repeat center/60%  url('./assets/svg/tree.svg');
 }
 
+.logo-tree:hover {
+  background-color: #2299EB;
+}
+
 .main-screen {
   display: flex;
   flex-direction: column;
-  max-height: 500px;
   align-items: center;
-  /* height: 700px; */
   align-content: center;
 }
 
@@ -68,9 +73,8 @@ nav > p:hover,
   align-self: center;
   text-align: center;
   padding: 66px 85px;
-  margin-top: 15rem;
-  font-size: 5.3rem;
-  line-height: 5.8rem;
+  margin-top: 10rem;
+  font-size: var(--h1);
   text-transform: uppercase;
   border-radius: 15%;
   border: #2299EB 2px solid;
@@ -85,9 +89,32 @@ nav > p:hover,
   backdrop-filter: blur(31px);
   border-radius: 30px;
   border: 3px solid #2299EB;
-  font-family: 'Roboto', sans-serif;
-  font-size: 2.4rem;
+  /* font-family: 'Roboto', sans-serif; */
+  font-size: var(--f2);
   line-height: 2.9rem;
   text-align: center;
-  margin-top: 11.5rem;
+  margin: 11.5rem 0 5rem;
+}
+
+.main-screen > button:hover {
+  cursor: pointer;
+
+}
+
+footer ul.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #121C1E;
+	font-size: var(--f1);
+	color:#29282B;
+  padding-left: 2.5rem;
+}
+
+footer ul.footer a {
+  color: #F7FFEA;
+  transition: color 0.3s ease-in;
+}
+footer ul.footer a:hover {
+	color: #2299EB;
 }
