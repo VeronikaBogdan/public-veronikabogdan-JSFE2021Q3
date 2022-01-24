@@ -1,0 +1,59 @@
+$Neucha: "Neucha", cursive;
+$Roboto: "Roboto", sans-serif;
+
+$white: #fff;
+$header-color: #121c1e;
+$blue: #2299eb;
+
+$h1: 5.3rem;
+$f1: 3.5rem;
+$f2: 2.4rem;
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  color: $white;
+}
+
+html {
+  font-family: $Neucha;
+  background: url("./../assets/bg.jpg"); //no-repeat center/(150%)
+  font-size: 10px;
+}
+
+.header {
+  position: relative;
+  background-color: $header-color;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  font-size: $f1;
+  padding: 10px;
+}
+
+@mixin name {
+}
+
+nav,
+.search {
+  display: flex;
+  align-items: center;
+
+  p {
+    padding: 0.8rem;
+    transition: all 0.3s ease;
+  }
+
+  p:hover {
+    color: $blue;
+    cursor: pointer;
+  }
+}
+
+.logo-tree, 
+.ball {
+  width: 48px;
+  height: 60px;
+}
