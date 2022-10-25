@@ -1,0 +1,120 @@
+* {
+	padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  color: #fff;
+}
+
+html {
+  font-family: 'Neucha', cursive;
+  /* font-family: 'Roboto', sans-serif; */
+  background: center/120%  url('./assets/bg.jpg');
+  font-size: 10px;
+}
+
+:root {
+  --h1: 5.3rem;
+  --f1: 3.5rem;
+  --f2: 2.4rem;
+}
+
+.header {
+  position: relative;
+  background-color: #121C1E;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--f1);
+  padding: 10px;
+}
+
+nav, 
+.search {
+  display: flex;
+  align-items:center;
+}
+
+nav > p,
+.logo-tree {
+  padding: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+nav > p:hover,
+.logo-tree:hover {
+  color: #2299EB;
+  cursor: pointer;
+}
+
+.logo-tree, 
+.ball {
+  width: 48px;
+  height: 60px;
+}
+
+.logo-tree {
+  background: no-repeat center/60%  url('./assets/svg/tree.svg');
+}
+
+.logo-tree:hover {
+  background-color: #2299EB;
+}
+
+.main-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.main-screen > h1 {
+  width: 423px;
+  align-self: center;
+  text-align: center;
+  padding: 66px 85px;
+  margin-top: 10rem;
+  font-size: var(--h1);
+  text-transform: uppercase;
+  border-radius: 15%;
+  border: #2299EB 2px solid;
+  background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(36, 197, 219, 0.15) 0%, rgba(36, 197, 219, 0) 100%);
+  backdrop-filter: blur(31px);
+  border-radius: 30px;
+}
+
+.main-screen > button {
+  padding: 12px 119px;
+  background: radial-gradient(118.88% 606.86% at 0% 0%, rgba(36, 197, 219, 0.15) 0%, rgba(36, 197, 219, 0) 100%);
+  backdrop-filter: blur(31px);
+  border-radius: 30px;
+  border: 3px solid #2299EB;
+  /* font-family: 'Roboto', sans-serif; */
+  font-size: var(--f2);
+  line-height: 2.9rem;
+  text-align: center;
+  margin: 11.5rem 0 5rem;
+}
+
+.main-screen > button:hover {
+  cursor: pointer;
+
+}
+
+footer ul.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #121C1E;
+	font-size: var(--f1);
+	color:#29282B;
+  padding-left: 2.5rem;
+}
+
+footer ul.footer a {
+  color: #F7FFEA;
+  transition: color 0.3s ease-in;
+}
+footer ul.footer a:hover {
+	color: #2299EB;
+}
