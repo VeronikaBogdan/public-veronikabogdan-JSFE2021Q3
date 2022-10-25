@@ -24,7 +24,7 @@
 }
 
 :root {
-	--font-black: #000;
+  --font-black: #000;
   --font-light: #fff;
   --bg-dark: #030303;
   --dark-red: #710707;
@@ -44,8 +44,7 @@ html {
   font-family: Roboto-Regular;
   scroll-behavior: smooth;
 
-
-	/* background: #030303;
+  /* background: #030303;
 	color: #fff; */
 }
 a {
@@ -109,15 +108,21 @@ a.dark-link:hover {
   background-color: var(--bg-dark);
   color: var(--font-light);
 }
+
+.dark-section-cl {
+  background-color: var(--bg-dark);
+  color: var(--font-light);
+}
+
 .section-welcome {
-	padding-bottom: 0;
+  padding-bottom: 0;
 }
 .title {
   width: 598px;
   padding: 75px 0 197px 0;
-	position: absolute;
-	z-index: 10;
-	width: calc(50% - 15px);
+  position: absolute;
+  z-index: 10;
+  width: calc(50% - 15px);
 }
 .title p {
   font-size: var(--font2);
@@ -154,13 +159,13 @@ a.dark-link:hover {
 }
 
 .slider {
-	position: relative;
-	margin-left: auto;
-	width: 71%;
-	max-width: 1000px;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
+  position: relative;
+  margin-left: auto;
+  width: 71%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 .slider-img {
   /* position: absolute;
@@ -168,61 +173,59 @@ a.dark-link:hover {
   background-position: calc(100% - 20px) calc(100% - 10px);
 }
 .slider-menu {
-	width: 600px;
-	height: 120px;
-	top: -60px;
-	position: relative;
-	background: var(--bg-dark);
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  width: 600px;
+  height: 120px;
+  top: -60px;
+  position: relative;
+  background: var(--bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .symbol-center {
-	padding: 0 10px;
+  padding: 0 10px;
 }
 .colors {
-	padding: 0 35px 0 55px;
+  padding: 0 35px 0 55px;
 }
 .rectangle {
-	width: 16px;
-	height: 16px;
-	margin-right: 25px;
-	background-color: var(--font-light);
-	color: var(--font-light);
-	transition: all 0.3s ease-in;
-	cursor: pointer;
+  width: 16px;
+  height: 16px;
+  margin-right: 25px;
+  background-color: var(--font-light);
+  color: var(--font-light);
+  transition: all 0.3s ease-in;
+  cursor: pointer;
 }
 .rectangle:hover {
-	background-color: #989898;
-	color: #989898;
+  background-color: #989898;
+  color: #989898;
 }
 .active {
-	background-color: var(--font-gold);
-	color: var(--font-gold);
+  background-color: var(--font-gold);
+  color: var(--font-gold);
 }
 .left-key {
-	padding-right: 20px;
+  padding-right: 20px;
 }
 .left-key,
 .right-key,
 .slide-btn {
-	cursor: pointer;
+  cursor: pointer;
 }
-
-
 
 /* .swiper-cont {
 	
   overflow-x: hidden;
 } */
 .swiper-slide-active {
-	width: 16px;
-	margin-right: 25px;
+  width: 16px;
+  margin-right: 25px;
 }
 
 .flex-cont {
-	/* display: flex; */
-	overflow: hidden;
+  /* display: flex; */
+  overflow: hidden;
 }
 
 .section-title-dark {
@@ -336,8 +339,8 @@ p span {
   margin-top: 50px;
 }
 .picture-img:nth-child(1),
-.picture-img:nth-child(11){
-	margin-top: 50px;
+.picture-img:nth-child(11) {
+  margin-top: 50px;
 }
 
 .parallax {
@@ -422,101 +425,95 @@ p span {
   display: none;
 }
 
-
-
 .contacts-map {
   width: 70%;
   height: 620px;
 }
 button {
-	padding: 0;
-	border: none;
-	cursor: pointer;
-	background: inherit;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background: inherit;
 }
 .button-theme {
-	display: block;
+  display: block;
 }
 .button-theme-cl {
-	display: none;
+  display: none;
 }
-
 
 /* Slider */
 .section-explore-img img {
-	max-width: 720px;
+  max-width: 720px;
   max-height: 700px;
-	width:100%;
-	display:block;
-
+  width: 100%;
+  display: block;
 }
 .container-explore {
-  width:50%;
-  display:block;
-  margin:30px auto
+  width: 50%;
+  display: block;
+  margin: 30px auto;
 }
 
 #before-after-slider {
-  width:100%;
-  position:relative;
+  width: 100%;
+  position: relative;
   overflow: hidden;
 }
 
 #after-image {
-  display:block
+  display: block;
 }
 
 #before-image {
-  position:absolute;
-  height:100%;
-  width:50%;
-  top:0;
-  left:0;
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  top: 0;
+  left: 0;
   overflow: hidden;
-  z-index:2;
+  z-index: 2;
 }
 #before-image > img {
-	width: 720px;
-	height: inherit;
-} 
+  width: 720px;
+  height: inherit;
+}
 
 #resizer {
-  position:absolute;
-  display:flex;
-  align-items:center;
-  z-index:5;
-  top:0;
-  left:50%;
-  height:100%;
-  width:4px;
-  background:white;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  z-index: 5;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 4px;
+  background: white;
   /*Stop vertical scrolling on touch*/
   -ms-touch-action: pan-y;
-    touch-action: pan-y;
+  touch-action: pan-y;
 }
 
 #resizer:after {
   /* background:linear-gradient(62deg,#c93072 5%,#3365c0); */
   font-family: "Font Awesome 5 Free";
-  content:'\f337';
-  font-weight:900;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:white;
-  position:absolute;
+  content: "\f337";
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: absolute;
   margin: 0 0 0 -22px;
-  width:40px;
-  height:40px;
-  border-radius:50%;
-  border:4px solid white;
-
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 4px solid white;
 }
 
-
-
-
-
+#resizer:hover {
+  cursor: pointer;
+}
 
 @media (max-width: 1330px) {
   .container {
@@ -562,6 +559,7 @@ button {
     --font4: 16px;
     --f-card: 28px;
   }
+
   .container {
     max-width: 984px;
   }
@@ -571,11 +569,13 @@ button {
   p {
     font-size: var(--font3);
   }
+
   h4 {
     font-size: var(--font2);
     line-height: 33px;
     padding-bottom: 50px;
   }
+
   .section {
     padding: 60px 0;
   }
@@ -664,7 +664,7 @@ button {
     max-width: 694px;
     height: auto;
   } */
-	.contacts-map {
+  .contacts-map {
     width: calc(100vw - 330px);
     height: calc(65vw - 212px);
   }
@@ -826,7 +826,7 @@ button {
   .contacts-map {
     padding-top: 28px;
     max-width: inherit;
-    height: 450px;;
+    height: 450px;
   }
   .line .container-flex {
     flex-direction: column;
@@ -872,7 +872,7 @@ button {
     padding-left: 0;
     justify-content: center;
   }
-	.contacts-map {
+  .contacts-map {
     padding-top: 28px;
     max-width: inherit;
     height: 248px;
@@ -910,7 +910,7 @@ button {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    flex-direction: column; 
+    flex-direction: column;
     max-height: 109px;
     padding-left: 0;
   }
