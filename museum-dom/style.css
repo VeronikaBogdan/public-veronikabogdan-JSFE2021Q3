@@ -346,11 +346,103 @@ p span {
 .tickets {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .tickets > img {
   width: 720px;
   height: 550px;
+}
+
+.ticket-form-container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  width: 100%;
+}
+
+.ticket-form {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 80px;
+  font-size: 22px;
+  font-family: Roboto-Light;
+}
+
+.ticket-form__type {
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket-form__type-ticket {
+  margin-bottom: 20px;
+}
+
+.ticket-form__age {
+  margin-bottom: 10px;
+}
+
+.ticket-form__counter {
+  width: max-content;
+  /* padding: 20px; */
+  border: #000 3px solid;
+  margin-bottom: 5px;
+}
+
+.ticket-form__counter-minus::after,
+.ticket-form__counter-plus::after {
+  content: "-";
+  font-size: var(--font2);
+  width: 20px;
+  padding: 10px;
+  font-family: Roboto-Regular;
+}
+
+.ticket-form__counter-minus:hover,
+.ticket-form__counter-plus:hover {
+  cursor: pointer;
+  /* background-color: #989898; */
+}
+
+.ticket-form__counter-text {
+  width: 50px;
+  border: 0;
+  font-size: 22px;
+  font-family: Roboto-Light;
+  padding: 10px;
+  height: 100%;
+  text-align: center;
+}
+
+.ticket-form__counter-plus::after {
+  content: "+";
+  font-size: var(--font3);
+  text-align: center;
+}
+
+p.total {
+  margin: 20px 0;
+  font-size: var(--font2);
+  align-self: flex-end;
+  font-family: Roboto-Bold;
+}
+
+button.buy-now {
+  color: var(--font-light);
+  background-color: var(--dark-red);
+  font-family: Roboto-Light;
+  font-size: var(--font4);
+  width: 155px;
+  padding: 10px;
+  margin: 20px 0;
+  align-self: flex-end;
+  transition: all 0.2s ease-in;
+}
+
+button.buy-now:hover {
+  background-color: var(--font-gold);
+  color: var(--bg-dark);
+  font-family: Roboto-Regular;
 }
 
 .parallax {
