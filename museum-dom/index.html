@@ -370,6 +370,68 @@
           <h2 class="section-title section-title-light title-underline">
             Buy tickets
           </h2>
+          <div class="section-inner tickets">
+            <img src="assets/img/buy-tickets.png" alt="img: Venus und Aeneas" />
+            <div class="ticket-form">
+              <form class="ticket-form__type">
+                <h4 class="ticket-form__type-name">Ticket Type</h4>
+                <input
+                  type="radio"
+                  name="ticketType"
+                  id="permanent"
+                  value="Permanent exhibition"
+                  checked
+                  class="ticket-form__type-input"
+                />
+                <label for="permanent" class="ticket-form__type-label"
+                  >Permanent exhibition</label
+                >
+                <input
+                  type="radio"
+                  name="ticketType"
+                  id="temporary"
+                  value="Temporary exhibition"
+                  class="ticket-form__type-input"
+                />
+                <label for="temporary" class="ticket-form__type-label"
+                  >Temporary exhibition</label
+                >
+                <input
+                  type="radio"
+                  name="ticketType"
+                  id="combined"
+                  value="Combined Admission"
+                  class="ticket-form__type-input"
+                />
+                <label for="combined" class="ticket-form__type-label"
+                  >Combined Admission</label
+                >
+              </form>
+              <div class="ticket-form__amount">
+                <h4 class="ticket-form__amount-name">Amount</h4>
+                <div class="ticket-form__amount-data">
+                  <div class="ticket-form__amount-age">
+                    <p class="ticket-form__age">Basic 18+</p>
+                    <div class="ticket-form__counter">
+                      <span class="ticket-form__counter-minus"></span>
+                      <input type="text" name="counter" id="" value="1" />
+                      <span class="ticket-form__counter-plus"></span>
+                    </div>
+                  </div>
+                  <div class="ticket-form__amount-age">
+                    <p class="ticket-form__age">Senior 65+</p>
+                    <div class="ticket-form__counter">
+                      <span class="ticket-form__counter-minus"></span>
+                      <input type="text" name="counter" id="" value="1" />
+                      <span class="ticket-form__counter-plus"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="total">Total: $<span class="total-sum"></span></p>
+            <button class="buy-now">Buy Now</button>
+          </div>
         </div>
       </section>
       <div class="parallax"></div>
