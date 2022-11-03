@@ -267,3 +267,48 @@ buttonThemeCl.addEventListener("click", () => {
   document.documentElement.style.setProperty("--font-black", "#000");
   document.documentElement.style.setProperty("--font-gold", "#9d8665");
 });
+
+//! Buy Tickets
+
+const counterMinus = document.querySelectorAll(".ticket-form__counter-minus");
+const counterPlus = document.querySelectorAll(".ticket-form__counter-plus");
+const amountData = document.querySelector(".ticket-form__amount-data");
+const currentAmountCounter = document.querySelectorAll(
+  ".ticket-form__counter-text"
+);
+
+const incrementAmount = (currentAmount) => ++currentAmount;
+const decrementAmount = (currentAmount) => --currentAmount;
+
+const increaseAmount = (e, age) => {
+  let current =
+    age == "basic" ? currentAmountCounter[0] : currentAmountCounter[1];
+  if (
+    e.target.parentElement.classList.contains(age) &&
+    e.target.classList.contains("ticket-form__counter-plus") &&
+    current.value >= 0 &&
+    current.value < 20
+  ) {
+    current.setAttribute("value", `${incrementAmount(current.value)}`);
+  }
+};
+
+const decreaseAmount = (e, age) => {
+  let current =
+    age == "basic" ? currentAmountCounter[0] : currentAmountCounter[1];
+  if (
+    e.target.parentElement.classList.contains(age) &&
+    e.target.classList.contains("ticket-form__counter-minus") &&
+    current.value > 0 &&
+    current.value <= 20
+  ) {
+    current.setAttribute("value", `${decrementAmount(current.value)}`);
+  }
+};
+
+amountData.addEventListener("click", (e) => {
+  increaseAmount(e, "basic");
+  increaseAmount(e, "senior");
+  decreaseAmount(e, "basic");
+  decreaseAmount(e, "senior");
+});
