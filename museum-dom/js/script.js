@@ -196,14 +196,13 @@ window.addEventListener("scroll", function () {
   const myMap = L.map("map").setView([48.86091, 2.3364], 17);
 
   L.tileLayer(
-    "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
-    {
-      maxZoom: 18,
-      id: "mapbox/light-v10",
-      tileSize: 512,
-      zoomOffset: -1,
-      accessToken: apiKey,
-    }
+    "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+    maxZoom: 18,
+    id: "mapbox/light-v10",
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: apiKey,
+  }
   ).addTo(myMap);
 
   var myIcon = L.icon({
@@ -211,7 +210,9 @@ window.addEventListener("scroll", function () {
     iconSize: [35, 35],
   });
 
-  const mainMarker = L.marker([48.86091, 2.3364], { icon: myIcon }).addTo(
+  const mainMarker = L.marker([48.86091, 2.3364], {
+    icon: myIcon
+  }).addTo(
     myMap
   );
   document
@@ -226,7 +227,9 @@ window.addEventListener("scroll", function () {
     [48.8625, 2.3365],
   ];
   mapPopup.forEach((point) => {
-    const marker = L.marker(point, { icon: myIcon }).addTo(myMap);
+    const marker = L.marker(point, {
+      icon: myIcon
+    }).addTo(myMap);
   });
   document
     .querySelectorAll(".leaflet-marker-icon")
